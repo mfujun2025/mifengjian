@@ -134,6 +134,16 @@
   /* ==== 接收端配置（由 build.py 在构建时注入） ==== */
   var CFG = /*__FORM_CFG__*/;
 
+  /* ==== 接收端错误码 → 人话（同时保留原始错误码便于站主排查） ==== */
+  var ERR_HINT = {
+    19001: ["接收端地址已失效", "收单机器人可能已被移除或地址变更。请点下方按钮复制内容，直接发给我们。"],
+    19021: ["接收端安全设置不匹配", "机器人启用了「签名校验」，静态站点无法支持这种模式。请复制内容直接发给我们。"],
+    19022: ["来源不在允许列表", "机器人启用了「IP 白名单」，静态站点无法支持这种模式。请复制内容直接发给我们。"],
+    19024: ["提交未通过接收端校验", "收单机器人的「自定义关键词」与消息内容不一致。请复制内容直接发给我们，我们稍后会修复这个通道。"],
+    9499:  ["发送过于频繁", "提交太频繁了，请等一分钟后再试。"],
+    11232: ["发送过于频繁", "提交太频繁了，请等一分钟后再试。"]
+  };
+
   var F = document.getElementById("rf");
   var KEYS = ["name","contact","size","qty","temp","media","note"];
   var LABEL = {name:"称呼", contact:"联系方式", size:"规格/尺寸", qty:"数量", temp:"工作温度", media:"接触介质", note:"补充说明"};
@@ -315,8 +325,13 @@
           F.reset(); document.getElementById("c7n").textContent = "0";
           document.getElementById("filltip").classList.remove("on");
         } else {
-          document.getElementById("errtitle").textContent = "接收端返回异常";
-          document.getElementById("errmsg").textContent = "错误信息：" + ((j && (j.msg || j.message || j.error)) || "未知") + "。请稍后重试，或复制内容直接发给我们。";
+          var code = (j && (j.code || j.StatusCode)) || "";
+          var raw = (j && (j.msg || j.message || j.error)) || "未知";
+          var hint = ERR_HINT[code];
+          document.getElementById("errtitle").textContent = hint ? hint[0] : "接收端返回异常";
+          document.getElementById("errmsg").textContent = hint
+            ? hint[1] + "（技术信息：" + code + " " + raw + "）"
+            : "错误信息：" + raw + "。请稍后重试，或复制内容直接发给我们。";
           show("err");
         }
       })
