@@ -1,0 +1,7 @@
+# 密封件.cn
+User-agent: *
+Allow: /
+Disallow: /data/
+
+# 百度/必应/谷歌等主流爬虫均允许抓取
+Sitemap: https://xn--5nq252acf.cn/sitemap.xml

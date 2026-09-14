@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O型圈选型咨询与报价 | 提供工况即可定材质与规格 - 密封件.cn</title>
+<meta name="description" content="提交 O 型圈工况（温度、介质、压力、尺寸、数量），获取材质、规格、硬度与用量建议及报价。">
+<meta name="keywords" content="O型圈报价,O型圈选型咨询,密封圈定制,O型圈询价">
+<link rel="canonical" href="https://xn--5nq252acf.cn/contact/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="O型圈选型咨询与报价 | 提供工况即可定材质与规格 - 密封件.cn">
+<meta property="og:description" content="提交 O 型圈工况（温度、介质、压力、尺寸、数量），获取材质、规格、硬度与用量建议及报价。">
+<meta property="og:url" content="https://xn--5nq252acf.cn/contact/">
+<meta property="og:site_name" content="密封件.cn">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ContactPage",
+ "name": "选型咨询与报价",
+ "url": "https://xn--5nq252acf.cn/contact/",
+ "inLanguage": "zh-CN"
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="/">密封件<span>.cn</span></a>
+    <nav class="topnav">
+      <a href="/">首页</a>
+      <a href="/tool/">规格查询</a>
+      <a href="/materials/">材质百科</a>
+      <a href="/articles/">技术文章</a>
+      <a href="/faq/">常见问题</a>
+      <a href="/contact/">选型咨询</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+/* 询单页局部样式，前缀 cx- 避免影响其他页面 */
+.cx-state{display:none;margin-top:18px}
+.cx-state.on{display:block}
+.cx-ok{border:1px solid #b7e0c4;background:#f0faf3;border-radius:10px;padding:18px 20px}
+.cx-ok h3{margin:0 0 8px;font-size:16px;color:#1a7f47}
+.cx-ok p{margin:0 0 12px;font-size:14px;color:var(--ink-2)}
+.cx-ok dl{margin:12px 0 0;font-size:13px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px}
+.cx-ok dt{color:var(--ink-3);white-space:nowrap}
+.cx-ok dd{margin:0;color:var(--ink);word-break:break-all}
+.cx-err{border:1px solid #f0c2b8;background:#fdf3f1;border-radius:10px;padding:16px 18px}
+.cx-err h3{margin:0 0 6px;font-size:15px;color:#c0392b}
+.cx-err p{margin:0 0 10px;font-size:14px;color:var(--ink-2)}
+.cx-err code{background:#fff;border:1px solid #f0c2b8;border-radius:4px;padding:1px 5px;font-size:12px}
+.cx-busy{display:none;margin-top:14px;font-size:14px;color:var(--ink-3)}
+.cx-busy.on{display:block}
+.cx-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+.cx-mini{font-size:12px;color:var(--ink-3);margin-top:6px;display:block}
+.cx-bad input,.cx-bad textarea{border-color:#e0a79c!important;background:#fffaf9}
+.cx-fill{margin-top:10px;font-size:13px;display:none;color:#1a7f47;background:#f0faf3;border:1px solid #b7e0c4;border-radius:8px;padding:8px 12px}
+.cx-fill.on{display:block}
+.cx-copy{background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:13px;cursor:pointer;color:var(--ink-2)}
+.cx-copy:hover{border-color:var(--ink-3)}
+[hidden]{display:none!important}
+</style>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="crumb" style="font-size:13px;color:var(--ink-3);margin:16px 0 10px"><a href="/">首页</a> / 选型咨询</div>
+    <h2 class="sec">选型咨询与报价</h2>
+    <p class="sub">把工况写清楚，我们能给出材质、规格、硬度与估算用量的完整建议。信息越全，回复越准。</p>
+
+    <div class="frow" style="grid-template-columns:1.35fr 1fr;gap:22px;align-items:start">
+      <form class="form" id="rf" novalidate autocomplete="off">
+        <div class="frow">
+          <div>
+            <label for="c1">称呼 <small>（必填）</small></label>
+            <input id="c1" name="name" required maxlength="40" placeholder="怎么称呼您">
+          </div>
+          <div>
+            <label for="c2">联系方式 <small>（必填，手机/微信均可）</small></label>
+            <input id="c2" name="contact" required maxlength="60" placeholder="便于回复的联系方式">
+          </div>
+        </div>
+        <div class="frow">
+          <div>
+            <label for="c3">规格或尺寸</label>
+            <input id="c3" name="size" maxlength="60" placeholder="例：20×2.65，或实测内径/截面">
+          </div>
+          <div>
+            <label for="c4">数量</label>
+            <input id="c4" name="qty" maxlength="40" placeholder="例：500 只 / 每月 2000 只">
+          </div>
+        </div>
+        <div class="frow">
+          <div>
+            <label for="c5">工作温度 <small>(℃)</small></label>
+            <input id="c5" name="temp" maxlength="40" placeholder="例：长期 120，峰值 150">
+          </div>
+          <div>
+            <label for="c6">接触介质</label>
+            <input id="c6" name="media" maxlength="60" placeholder="例：矿物液压油 / 蒸汽 / 汽油">
+          </div>
+        </div>
+        <div style="margin-bottom:16px">
+          <label for="c7">补充说明</label>
+          <textarea id="c7" name="note" maxlength="800" placeholder="压力、运动方式（静密封/往复/旋转）、是否有认证要求（食品级、饮用水、耐油认证）等"></textarea>
+          <span class="cx-mini"><span id="c7n">0</span> / 800</span>
+        </div>
+
+        <!-- 蜜罐字段：正常用户看不到，机器人会填 -->
+        <div class="cx-hp" aria-hidden="true">
+          <label for="c9">请勿填写此字段</label>
+          <input id="c9" name="company_url" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div id="filltip" class="cx-fill">已从规格查询工具带入参数，可直接提交或补充其他信息。</div>
+
+        <button class="btn solid" type="submit" id="sub">提交咨询</button>
+        <div class="cx-busy" id="busy">正在提交，请稍候…</div>
+
+        <div class="cx-state" id="ok">
+          <div class="cx-ok">
+            <h3>已收到，我们会尽快回复</h3>
+            <p>你提交的工况如下，如需补充，重新提交一次即可（我们会看到最新一条）。</p>
+            <dl id="oklist"></dl>
+            <p style="margin:14px 0 0">
+              <button type="button" class="cx-copy" id="copybtn">复制这份内容</button>
+              <button type="button" class="cx-copy" id="againbtn" style="margin-left:8px">再提交一条</button>
+            </p>
+          </div>
+        </div>
+
+        <div class="cx-state" id="err">
+          <div class="cx-err">
+            <h3 id="errtitle">提交失败</h3>
+            <p id="errmsg">网络或接收端异常，请稍后重试。</p>
+            <p>也可以直接把工况复制后发给我们：</p>
+            <p><button type="button" class="cx-copy" id="copybtn2">复制这份内容</button></p>
+          </div>
+        </div>
+      </form>
+
+      <div>
+        <div class="card">
+          <h3>提交哪些信息最有用</h3>
+          <ul>
+            <li><b>尺寸</b>：优先给内径 + 截面，或直接给实物照片加卡尺读数</li>
+            <li><b>温度</b>：写长期工作温度，峰值单独标注</li>
+            <li><b>介质</b>：写清具体类型，不要只写"液压油"</li>
+            <li><b>压力与运动方式</b>：静密封还是往复/旋转，压力多少 MPa</li>
+            <li><b>数量与交期</b>：便于给出阶梯价</li>
+          </ul>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>先自助查一下更快</h3>
+          <p>如果只是想知道规格或材质，直接用工具更快：</p>
+          <p style="margin-top:12px">
+            <a class="btn solid" href="/tool/">规格查询</a>
+            <a class="btn solid" style="margin-left:8px" href="/tool/?t=150&amp;media=hydraulic_mineral">材质选型</a>
+          </p>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>回复时效</h3>
+          <p>工作时间内一般 2 小时内回复；非工作时间次日处理。紧急件请在补充说明里写明"加急"。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  /* ==== 接收端配置（由 build.py 在构建时注入） ==== */
+  var CFG = {"mode": "webhook", "webhook": "https://open.feishu.cn/open-apis/bot/v2/hook/bd7df7e7-3754-4e47-bb8c-5ac539b1e4b7", "worker": "", "keyword": "询单", "site": "密封件.cn"};
+
+  var F = document.getElementById("rf");
+  var KEYS = ["name","contact","size","qty","temp","media","note"];
+  var LABEL = {name:"称呼", contact:"联系方式", size:"规格/尺寸", qty:"数量", temp:"工作温度", media:"接触介质", note:"补充说明"};
+
+  function g(k){ var el = F.elements[k]; return el ? String(el.value || "").trim() : ""; }
+  function esc(s){ return s.replace(/[&<>]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c]; }); }
+
+  /* ---------- 收集 ---------- */
+  function collect(){
+    var d = {};
+    KEYS.forEach(function(k){ d[k] = g(k); });
+    return d;
+  }
+
+  /* ---------- 预填（支持从工具页带参数跳转） ---------- */
+  function prefill(){
+    var q = new URLSearchParams(location.search);
+    var map = {size:"size", d1:"size", media:"media", t:"temp"};
+    var done = [];
+    // 组合内径/截面成规格写法
+    var d1 = q.get("d1"), d2 = q.get("d2");
+    if(d1 && d2){ F.elements["size"].value = d1 + "×" + d2; done.push("规格"); }
+    else if(q.get("size")){ F.elements["size"].value = q.get("size"); done.push("规格"); }
+    else if(d1){ F.elements["size"].value = "内径 " + d1; done.push("规格"); }
+    if(!F.elements["size"].value && q.get("n1")){ F.elements["size"].value = "旧件实测 " + q.get("n1") + "×" + (q.get("n2")||""); done.push("规格"); }
+    if(q.get("media")){
+      var M = {hydraulic_mineral:"矿物液压油", engine_oil:"发动机油", gasoline:"汽油", diesel:"柴油", water_cold:"冷水",
+        steam_hot_water:"蒸汽/热水", air:"空气", ozone:"臭氧", alcohol:"醇类", ketone:"酮类", ester:"酯类",
+        acid_dilute:"稀酸", alkali_strong:"强碱", glycol:"乙二醇", hfc:"制冷剂HFC", ammonia:"氨",
+        brake_fluid:"刹车油", phosphate_ester:"磷酸酯液压油", aromatic:"芳烃溶剂", perfluoro_solvent:"全氟溶剂"};
+      F.elements["media"].value = M[q.get("media")] || q.get("media");
+      done.push("介质");
+    }
+    if(q.get("t")){ F.elements["temp"].value = q.get("t") + " ℃"; done.push("温度"); }
+    if(done.length){ document.getElementById("filltip").classList.add("on"); }
+  }
+
+  /* ---------- 校验 ---------- */
+  function validate(){
+    var bad = [];
+    document.querySelectorAll(".cx-bad").forEach(function(e){ e.classList.remove("cx-bad"); });
+    if(!g("name")) bad.push("c1");
+    if(!g("contact")) bad.push("c2");
+    else if(!/^[\d\-+ ()]{7,20}$|^[\w.\-@]{2,}$|[\u4e00-\u9fa5A-Za-z0-9_\-]{4,}/.test(g("contact")) && g("contact").length < 4){
+      bad.push("c2");
+    }
+    if(bad.length){
+      bad.forEach(function(id){
+        var el = document.getElementById(id);
+        if(el){ var w = el.closest("div"); if(w) w.classList.add("cx-bad"); el.focus(); }
+      });
+      return "请填写称呼和联系方式（联系方式至少 4 个字符），否则我们无法回复。";
+    }
+    return "";
+  }
+
+  /* ---------- 构造飞书卡片 ---------- */
+  function now(){
+    var d = new Date(), p = function(n){ return n < 10 ? "0" + n : "" + n; };
+    return d.getFullYear() + "-" + p(d.getMonth()+1) + "-" + p(d.getDate()) + " " + p(d.getHours()) + ":" + p(d.getMinutes());
+  }
+
+  function buildPayload(d){
+    var lines = KEYS.filter(function(k){ return d[k]; })
+                    .map(function(k){ return "**" + LABEL[k] + "**：" + esc(d[k]); });
+    if(!lines.length) lines = ["（未填写任何字段）"];
+    var card = {
+      msg_type: "interactive",
+      card: {
+        config: { wide_screen_mode: true },
+        header: {
+          template: "blue",
+          title: { tag: "plain_text", content: "\uD83D\uDD14 新" + CFG.keyword + " · " + CFG.site }
+        },
+        elements: [
+          { tag: "div", text: { tag: "lark_md", content: lines.join("\n") } },
+          { tag: "hr" },
+          { tag: "note", elements: [ { tag: "plain_text",
+            content: "来源：选型咨询页 · " + now() + " · 类型：" + CFG.keyword + " · 由 " + CFG.site + " 自动推送" } ] }
+        ]
+      }
+    };
+    return card;
+  }
+
+  /* 纯文本兜底（Worker 模式或降级时用） */
+  function buildText(d){
+    var lines = KEYS.filter(function(k){ return d[k]; })
+                    .map(function(k){ return LABEL[k] + "：" + d[k]; });
+    return "新" + CFG.keyword + " · " + CFG.site + "\n" + lines.join("\n") + "\n来源：选型咨询页 · " + now();
+  }
+
+  /* ---------- 显示状态 ---------- */
+  function show(id){ ["ok","err"].forEach(function(x){ document.getElementById(x).classList.toggle("on", x === id); }); }
+  function hide(){ show(""); }
+
+  function fillOk(d){
+    var dl = document.getElementById("oklist");
+    dl.innerHTML = KEYS.filter(function(k){ return d[k]; })
+      .map(function(k){ return "<dt>" + LABEL[k] + "</dt><dd>" + esc(d[k]) + "</dd>"; }).join("");
+    if(!dl.innerHTML) dl.innerHTML = "<dt>内容</dt><dd>（未填写）</dd>";
+  }
+
+  var LAST = null;
+  function copyText(){
+    var d = LAST || collect();
+    var txt = "【" + CFG.keyword + "】" + CFG.site + " 选型咨询\n" +
+      KEYS.filter(function(k){ return d[k]; }).map(function(k){ return LABEL[k] + "：" + d[k]; }).join("\n");
+    var done = function(){
+      var b = document.getElementById("copybtn");
+      if(b){ b.textContent = "已复制 ✓"; setTimeout(function(){ b.textContent = "复制这份内容"; }, 1800); }
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(done, function(){ fallback(txt, done); });
+    } else { fallback(txt, done); }
+  }
+  function fallback(txt, cb){
+    var ta = document.createElement("textarea");
+    ta.value = txt; ta.style.position = "fixed"; ta.style.left = "-9999px";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); cb(); } catch(e){ alert("复制失败，请手动选中复制。"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ---------- 提交 ---------- */
+  function resolveTarget(){
+    if(CFG.mode === "worker" && CFG.worker) return {url: CFG.worker, card: true, worker: true};
+    if(CFG.mode === "webhook" && CFG.webhook) return {url: CFG.webhook, card: true, worker: false};
+    if(CFG.worker) return {url: CFG.worker, card: true, worker: true};
+    if(CFG.webhook) return {url: CFG.webhook, card: true, worker: false};
+    return null;   // 未配置 → 演示模式
+  }
+
+  function submit(){
+    hide();
+    var msg = validate();
+    if(msg){ document.getElementById("errmsg").textContent = msg; document.getElementById("errtitle").textContent = "请先补全信息"; show("err"); return; }
+    var d = collect();
+    LAST = d;
+
+    /* 蜜罐命中 → 判定为机器人。假装提交成功但不发送，避免被脚本探测出拦截规则 */
+    if(g("company_url")){
+      try { console.warn("[seal-form] honeypot hit, dropped silently"); } catch(e){}
+      fillOk(d);
+      show("ok");
+      F.reset();
+      document.getElementById("c7n").textContent = "0";
+      document.getElementById("filltip").classList.remove("on");
+      return;
+    }
+
+    var t = resolveTarget();
+    if(!t){
+      // 演示模式：不丢数据给第三方，给出复制兜底
+      fillOk(d);
+      document.getElementById("errtitle").textContent = "尚未配置接收端";
+      document.getElementById("errmsg").textContent = "表单已填好。当前站点还未接入接收端，请先复制内容发给我们。";
+      show("err");
+      return;
+    }
+
+    var btn = document.getElementById("sub"), busy = document.getElementById("busy");
+    btn.disabled = true; busy.classList.add("on");
+
+    var body = t.worker
+      ? { text: buildText(d), payload: d, keyword: CFG.keyword, site: CFG.site }
+      : buildPayload(d);
+
+    fetch(t.url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    }).then(function(r){ return r.json(); })
+      .then(function(j){
+        var okFlag = (j && (j.ok === true || j.code === 0 || j.StatusCode === 0));
+        if(okFlag){
+          fillOk(d);
+          show("ok");
+          F.reset(); document.getElementById("c7n").textContent = "0";
+          document.getElementById("filltip").classList.remove("on");
+        } else {
+          document.getElementById("errtitle").textContent = "接收端返回异常";
+          document.getElementById("errmsg").textContent = "错误信息：" + ((j && (j.msg || j.message || j.error)) || "未知") + "。请稍后重试，或复制内容直接发给我们。";
+          show("err");
+        }
+      })
+      .catch(function(){
+        document.getElementById("errtitle").textContent = "提交失败";
+        document.getElementById("errmsg").textContent = "网络或接收端异常（可能是网络波动、浏览器拦截或接收端未就绪）。请稍后重试，或复制内容直接发给我们。";
+        show("err");
+      })
+      .then(function(){ btn.disabled = false; busy.classList.remove("on"); });
+  }
+
+  /* ---------- 事件绑定 ---------- */
+  F.addEventListener("submit", function(e){ e.preventDefault(); submit(); });
+  document.getElementById("copybtn").addEventListener("click", copyText);
+  document.getElementById("copybtn2").addEventListener("click", copyText);
+  document.getElementById("againbtn").addEventListener("click", function(){ hide(); F.reset(); document.getElementById("c7n").textContent = "0"; });
+  document.getElementById("c7").addEventListener("input", function(){ document.getElementById("c7n").textContent = this.value.length; });
+
+  prefill();
+  /* 供自动化验证调用 */
+  window.__RF__ = { submit: submit, collect: collect, cfg: CFG };
+})();
+</script>
+
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>密封件.cn</h4>
+        <p>O 型密封圈规格查询与选型参考站。规格数据依据 GB/T 3452.1-2005（等同采用 ISO 3601-1），材质结论来自工程实践归纳，供设计选型与采购比对使用。</p>
+      </div>
+      <div>
+        <h4>工具与资料</h4>
+        <ul>
+          <li><a href="/tool/">O型圈规格查询工具</a></li>
+          <li><a href="/materials/">材质百科</a></li>
+          <li><a href="/articles/">技术文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>服务</h4>
+        <ul>
+          <li><a href="/contact/">选型咨询与报价</a></li>
+          <li><a href="/about/">关于本站</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      © 2026 密封件.cn　本站数据仅供参考，正式定型请以厂家实测报告及标准原文为准。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
