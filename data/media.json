@@ -1,0 +1,124 @@
+{
+ "media": [
+  {
+   "id": "hydraulic_mineral",
+   "name": "液压油（矿物型）",
+   "cat": "油类",
+   "note": "最常见的液压系统工作介质"
+  },
+  {
+   "id": "engine_oil",
+   "name": "机油 / 润滑油",
+   "cat": "油类",
+   "note": "发动机、齿轮箱用油"
+  },
+  {
+   "id": "gasoline",
+   "name": "汽油",
+   "cat": "油类",
+   "note": "含芳香烃，溶胀性强"
+  },
+  {
+   "id": "diesel",
+   "name": "柴油",
+   "cat": "油类",
+   "note": "含芳香烃，溶胀性强"
+  },
+  {
+   "id": "aromatic",
+   "name": "芳香烃（苯/甲苯/二甲苯）",
+   "cat": "溶剂",
+   "note": "强溶剂，对多数橡胶溶胀明显"
+  },
+  {
+   "id": "ketone",
+   "name": "酮类（丙酮/丁酮）",
+   "cat": "溶剂",
+   "note": "极性溶剂，溶胀极强"
+  },
+  {
+   "id": "ester",
+   "name": "酯类（合成酯油/酯型溶剂）",
+   "cat": "溶剂",
+   "note": "合成酯液压油、酯类清洗剂"
+  },
+  {
+   "id": "alcohol",
+   "name": "醇类（乙醇/甲醇）",
+   "cat": "溶剂",
+   "note": "甲醇汽油、酒精类介质"
+  },
+  {
+   "id": "phosphate_ester",
+   "name": "磷酸酯液压油",
+   "cat": "油类",
+   "note": "航空、电厂抗燃液压油"
+  },
+  {
+   "id": "brake_fluid",
+   "name": "刹车油（DOT3/DOT4 醇醚型）",
+   "cat": "油类",
+   "note": "汽车制动系统"
+  },
+  {
+   "id": "water_cold",
+   "name": "水（常温）",
+   "cat": "水/汽",
+   "note": "自来水、冷却水"
+  },
+  {
+   "id": "steam_hot_water",
+   "name": "热水 / 蒸汽",
+   "cat": "水/汽",
+   "note": "≥100℃ 热水或饱和蒸汽"
+  },
+  {
+   "id": "air",
+   "name": "空气 / 压缩空气",
+   "cat": "气体",
+   "note": "气动系统、真空场合"
+  },
+  {
+   "id": "ozone",
+   "name": "臭氧",
+   "cat": "气体",
+   "note": "户外老化、电气环境"
+  },
+  {
+   "id": "glycol",
+   "name": "乙二醇冷却液 / 防冻液",
+   "cat": "水/汽",
+   "note": "发动机冷却系统"
+  },
+  {
+   "id": "hfc",
+   "name": "HFC 制冷剂（R134a 等）",
+   "cat": "气体",
+   "note": "汽车空调、制冷设备"
+  },
+  {
+   "id": "acid_dilute",
+   "name": "稀酸",
+   "cat": "酸碱",
+   "note": "稀硫酸、稀盐酸等"
+  },
+  {
+   "id": "alkali_strong",
+   "name": "强碱（氢氧化钠等）",
+   "cat": "酸碱",
+   "note": "碱洗、脱脂工序"
+  },
+  {
+   "id": "ammonia",
+   "name": "氨 / 胺类",
+   "cat": "酸碱",
+   "note": "制冷氨、胺类添加剂"
+  },
+  {
+   "id": "perfluoro_solvent",
+   "name": "全氟溶剂",
+   "cat": "溶剂",
+   "note": "氟化溶剂、部分清洗剂"
+  }
+ ]
+}

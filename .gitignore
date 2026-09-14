@@ -1,0 +1,13 @@
+# 本地配置：含 webhook 地址，不要提交到公开仓库
+config.local.json
+
+# Python
+__pycache__/
+*.pyc
+
+# 测试临时产物
+tests/_*
+runs/
+
+# 部署脚本（含本地路径，无需入库）
+_deploy/

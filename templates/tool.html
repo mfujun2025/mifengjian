@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O型圈规格查询工具 | 尺寸查询 · 近似匹配 · 材质选型</title>
+<meta name="description" content="在线 O 型圈规格查询工具：按内径/截面/外径查 GB/T 3452.1-2005 标准规格，支持旧件实测值近似匹配、按温度与介质自动推荐材质并排除不适用材质。纯前端运行，无需注册。">
+<meta name="keywords" content="O型圈规格表,O形圈尺寸查询,O型密封圈材质选型,GB/T 3452.1,O型圈选型工具,氟橡胶,丁腈橡胶">
+<link rel="canonical" href="https://xn--5nq252acf.cn/tool/">
+<meta property="og:title" content="O型圈规格查询工具 | 尺寸查询 · 近似匹配 · 材质选型">
+<meta property="og:description" content="输入内径/截面/外径查标准规格，输入旧件实测值找最接近规格，输入温度与介质自动推荐材质。">
+<meta property="og:type" content="website">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "O型圈规格查询工具",
+ "url": "https://xn--5nq252acf.cn/tool/",
+ "applicationCategory": "EngineeringApplication",
+ "operatingSystem": "任意浏览器（纯前端，可离线）",
+ "inLanguage": "zh-CN",
+ "description": "按 GB/T 3452.1-2005 查询 O 型圈标准规格，支持内径/截面/外径互查、旧件实测值近似匹配、按温度与介质自动推荐材质并排除不适用材质。",
+ "isAccessibleForFree": true,
+ "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"},
+ "publisher": {"@type": "Organization", "name": "密封件.cn", "url": "https://xn--5nq252acf.cn/"}
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://xn--5nq252acf.cn/"},
+  {"@type": "ListItem", "position": 2, "name": "O型圈规格查询工具", "item": "https://xn--5nq252acf.cn/tool/"}
+ ]
+}
+</script>
+<style>
+:root{
+  --ink:#16222e; --ink-2:#4a5b6b; --ink-3:#7e8fa0;
+  --line:#dfe6ee; --line-2:#eef3f8;
+  --bg:#f4f7fa; --card:#fff; --brand:#0d5c8a; --brand-2:#0a7ea4;
+  --ok:#0f7b4f; --ok-bg:#eaf7f1; --warn:#a8681a; --warn-bg:#fdf4e6;
+  --bad:#b93a2b; --bad-bg:#fdeeec; --mute-bg:#f2f5f8;
+  --radius:10px; --shadow:0 1px 2px rgba(16,32,48,.06),0 6px 20px rgba(16,32,48,.06);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+/* ---------- header ---------- */
+.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.topbar .wrap{display:flex;align-items:center;gap:18px;height:58px}
+.logo{font-weight:700;font-size:17px;color:var(--ink);letter-spacing:.3px;white-space:nowrap}
+.logo span{color:var(--brand)}
+.topnav{margin-left:auto;display:flex;gap:16px;font-size:14px;flex-wrap:wrap}
+.topnav a{color:var(--ink-2)}
+/* ---------- page head ---------- */
+.phead{padding:26px 0 6px}
+.phead h1{font-size:25px;margin:0 0 8px;letter-spacing:.2px}
+.phead p{margin:0;color:var(--ink-2);font-size:14.5px;max-width:820px}
+.crumb{font-size:13px;color:var(--ink-3);margin-bottom:12px}
+/* ---------- tabs ---------- */
+.tabs{display:flex;gap:6px;margin:20px 0 0;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tabs button{appearance:none;border:1px solid transparent;border-bottom:none;background:transparent;
+  font:inherit;font-size:14.5px;color:var(--ink-2);padding:9px 16px;border-radius:8px 8px 0 0;cursor:pointer}
+.tabs button:hover{background:#fff;color:var(--ink)}
+.tabs button.on{background:#fff;border-color:var(--line);color:var(--brand);font-weight:600;position:relative;top:1px}
+/* ---------- card ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.panel{display:none}
+.panel.on{display:block}
+.hint{font-size:13px;color:var(--ink-3);margin:0 0 14px}
+/* ---------- form ---------- */
+.grid{display:grid;gap:14px}
+.f3{grid-template-columns:repeat(3,1fr)}
+.f2{grid-template-columns:repeat(2,1fr)}
+.f4{grid-template-columns:repeat(4,1fr)}
+label{display:block;font-size:13.5px;font-weight:600;color:var(--ink-2);margin-bottom:6px}
+label small{font-weight:400;color:var(--ink-3)}
+input[type=number],input[type=text],select{width:100%;padding:9px 11px;border:1px solid var(--line);
+  border-radius:8px;font:inherit;font-size:14.5px;background:#fff;color:var(--ink)}
+input:focus,select:focus{outline:2px solid #cfe6f3;border-color:var(--brand-2)}
+input[type=range]{width:100%;accent-color:var(--brand-2)}
+.btn{appearance:none;border:1px solid var(--brand);background:var(--brand);color:#fff;font:inherit;font-size:14.5px;
+  font-weight:600;padding:10px 22px;border-radius:8px;cursor:pointer}
+.btn:hover{background:#0b4d73;border-color:#0b4d73}
+.btn.ghost{background:#fff;color:var(--ink-2);border-color:var(--line)}
+.btn.ghost:hover{background:var(--mute-bg);border-color:#c9d5e0}
+.actions{display:flex;gap:10px;align-items:center;margin-top:16px;flex-wrap:wrap}
+.flexline{display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap}
+.flexline>div{flex:0 0 auto;min-width:150px}
+/* ---------- result ---------- */
+.res{margin-top:20px}
+.resbar{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ink-2);margin-bottom:10px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:12.5px;padding:2px 9px;border-radius:20px;background:var(--mute-bg);color:var(--ink-2)}
+.tag.ok{background:var(--ok-bg);color:var(--ok)}
+.tag.bad{background:var(--bad-bg);color:var(--bad)}
+.tag.warn{background:var(--warn-bg);color:var(--warn)}
+table{width:100%;border-collapse:collapse;font-size:14px;background:#fff}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line-2)}
+th{background:#f7fafc;font-size:13px;color:var(--ink-2);font-weight:600;white-space:nowrap;position:sticky;top:0}
+tbody tr:hover{background:#f8fbfd}
+td.num,th.num{font-variant-numeric:tabular-nums}
+.code{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:600;color:var(--brand)}
+.tblbox{max-height:520px;overflow:auto;border:1px solid var(--line);border-radius:8px}
+/* ---------- material cards ---------- */
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.mat{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:#fff}
+.mat.top{border-color:#9dd0b6;background:linear-gradient(0deg,var(--ok-bg),var(--ok-bg))}
+.mat h4{margin:0 0 4px;font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mat .sub{font-size:12.5px;color:var(--ink-3);margin-bottom:8px}
+.mat p{margin:8px 0 0;font-size:13.6px;color:var(--ink-2)}
+.kv{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.kv i{font-style:normal;font-size:12.5px;background:var(--mute-bg);color:var(--ink-2);padding:2px 8px;border-radius:6px}
+.excl{border:1px solid #f0c7c1;background:var(--bad-bg);border-radius:10px;padding:14px 16px;margin-top:18px}
+.excl h4{margin:0 0 10px;font-size:15px;color:var(--bad)}
+.exclitem{display:flex;gap:10px;padding:7px 0;border-top:1px dashed #eccfcb;font-size:13.6px}
+.exclitem:first-of-type{border-top:none}
+.exclitem b{color:var(--bad);white-space:nowrap;min-width:130px}
+.legend{font-size:12.8px;color:var(--ink-3);margin-top:10px;line-height:1.75}
+.empty{padding:28px 14px;text-align:center;color:var(--ink-3);font-size:14px}
+.bar{height:6px;background:var(--line-2);border-radius:4px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--brand-2)}
+.score{font-variant-numeric:tabular-nums;font-weight:700;color:var(--brand)}
+/* ---------- notes / faq ---------- */
+.notes{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.note{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.note h3{margin:0 0 8px;font-size:15.5px}
+.note ul{margin:0;padding-left:18px;font-size:13.8px;color:var(--ink-2)}
+.note li{margin:5px 0}
+footer{margin-top:40px;padding:22px 0;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3)}
+footer a{color:var(--ink-3)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(max-width:820px){
+  .f3,.f2,.f4{grid-template-columns:1fr}
+  .notes{grid-template-columns:1fr}
+  .topnav{display:none}
+}
+@media print{.topbar,.tabs,.actions,footer{display:none}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="logo">密封件<span>.cn</span></div>
+    <nav class="topnav">
+      <a href="/">首页</a>
+      <a href="/tool/">规格查询</a>
+      <a href="/materials/">材质百科</a>
+      <a href="/articles/">技术文章</a>
+      <a href="/contact/">询价</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="phead">
+    <div class="crumb"><a href="/">首页</a> / O型圈规格查询工具</div>
+    <h1>O 型圈规格查询工具</h1>
+    <p>按 <b>GB/T 3452.1-2005</b>（等同 ISO 3601-1）G 系列整理的标准规格库，共 <b id="cntSpecs">—</b> 条常用规格组合。支持三种用法：查标准尺寸、拿旧件实测值找最接近规格、按温度与介质自动推荐材质。全部计算在浏览器本地完成，不上传任何数据。</p>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="on" data-panel="p1" role="tab" aria-selected="true">① 尺寸查询</button>
+    <button data-panel="p2" role="tab" aria-selected="false">② 近似匹配</button>
+    <button data-panel="p3" role="tab" aria-selected="false">③ 材质选型</button>
+    <button data-panel="p4" role="tab" aria-selected="false">④ 规格总表</button>
+  </div>
+
+  <div class="card" style="border-radius:0 8px 8px 8px">
+
+    <!-- ============ 1. 尺寸查询 ============ -->
+    <section class="panel on" id="p1" role="tabpanel">
+      <p class="hint">已知任一项即可查询，也可组合填写缩小范围。外径 d3 = 内径 d1 + 2 × 截面 d2。</p>
+      <div class="grid f3">
+        <div>
+          <label for="q1">内径 d1 <small>(mm)</small></label>
+          <input type="number" id="q1" step="0.01" placeholder="例：20">
+        </div>
+        <div>
+          <label for="q2">截面直径 d2 <small>(mm)</small></label>
+          <input type="number" id="q2" step="0.01" placeholder="例：2.65">
+        </div>
+        <div>
+          <label for="q3">外径 d3 <small>(mm)</small></label>
+          <input type="number" id="q3" step="0.01" placeholder="例：25.3">
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="btnQuery">查询规格</button>
+        <button class="btn ghost" id="btnReset1">清空</button>
+        <span class="hint" style="margin:0">也可直接输入规格代号，如 <b>20x2.65</b>（在截面框输入）</span>
+      </div>
+      <div class="res" id="res1"></div>
+    </section>
+
+    <!-- ============ 2. 近似匹配 ============ -->
+    <section class="panel" id="p2" role="tabpanel">
+      <p class="hint">拆下旧圈后用卡尺实测内径与线径（截面），输入实测值，系统按接近度排序推荐标准规格。不用手算，也不用翻手册。</p>
+      <div class="grid f2">
+        <div>
+          <label for="n1">实测内径 <small>(mm)</small></label>
+          <input type="number" id="n1" step="0.01" placeholder="例：19.8">
+        </div>
+        <div>
+          <label for="n2">实测截面 / 线径 <small>(mm)</small></label>
+          <input type="number" id="n2" step="0.01" placeholder="例：2.7">
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="btnNear">查找最接近规格</button>
+        <button class="btn ghost" id="btnReset2">清空</button>
+        <span class="hint" style="margin:0">只填内径也可匹配；截面为空时按内径优先排序</span>
+      </div>
+      <div class="res" id="res2"></div>
+    </section>
+
+    <!-- ============ 3. 材质选型 ============ -->
+    <section class="panel" id="p3" role="tabpanel">
+      <p class="hint">输入长期工作温度与接触介质，系统先按耐温过滤，再用介质黑名单排除不兼容材质，并给出排除原因。峰值温度请填「短时峰值」档。</p>
+      <div class="grid f3">
+        <div>
+          <label for="t1">工作温度 <small>(℃)</small></label>
+          <input type="number" id="t1" step="5" value="150">
+          <input type="range" id="t1r" min="-60" max="300" step="5" value="150" aria-label="工作温度滑块">
+        </div>
+        <div>
+          <label for="m1">接触介质</label>
+          <select id="m1"></select>
+        </div>
+        <div>
+          <label for="s1">运动方式</label>
+          <select id="s1">
+            <option value="static_face">静态端面密封</option>
+            <option value="static_radial">静态径向密封</option>
+            <option value="dynamic_rec">往复动态密封</option>
+            <option value="dynamic_rot">旋转动态密封</option>
+          </select>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="btnMat">推荐材质</button>
+        <button class="btn ghost" id="btnReset3">重置</button>
+      </div>
+      <div class="res" id="res3"></div>
+    </section>
+
+    <!-- ============ 4. 规格总表 ============ -->
+    <section class="panel" id="p4" role="tabpanel">
+      <p class="hint">GB/T 3452.1-2005 G 系列全部常用规格，可按截面筛选或关键字过滤。</p>
+      <div class="flexline">
+        <div>
+          <label for="f2">按截面筛选</label>
+          <select id="f2"></select>
+        </div>
+        <div style="min-width:220px">
+          <label for="fq">关键字</label>
+          <input type="text" id="fq" placeholder="例：20 或 20x2.65">
+        </div>
+        <div>
+          <label>&nbsp;</label>
+          <button class="btn ghost" id="btnPrint">打印 / 导出 PDF</button>
+        </div>
+      </div>
+      <div class="res" id="res4"></div>
+    </section>
+
+  </div>
+
+  <!-- ---------- 说明区 ---------- -->
+  <div class="notes">
+    <div class="note">
+      <h3>怎么用这三个功能</h3>
+      <ul>
+        <li><b>手上有图纸型号</b>（如 20×2.65）→ 用「尺寸查询」直接核对标准公差。</li>
+        <li><b>只有旧件实物</b>→ 用「近似匹配」输入实测值，按匹配度选最接近的标准规格。</li>
+        <li><b>要选材质</b>→ 用「材质选型」输入温度与介质，先看排除清单再看推荐清单。</li>
+      </ul>
+    </div>
+    <div class="note">
+      <h3>选型三步口诀</h3>
+      <ul>
+        <li><b>先看介质</b>：是否碰矿物油系油品，这一步直接排除掉一半材质。</li>
+        <li><b>再看温度</b>：用长期工作温度，不要用设备偶尔出现的峰值温度。</li>
+        <li><b>最后看成本</b>：仍有多个候选时，从价格低的往上选，别一上来就上全氟醚。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:16px">
+    <h3>数据口径与免责声明</h3>
+    <ul>
+      <li>规格数据按 GB/T 3452.1-2005 G 系列（一般应用）整理，外径由 d1 + 2×d2 计算得出；公差为标称值。</li>
+      <li>材质耐介质结论为工程经验归纳，用于快速初筛；用于最终定型前，请以厂家实测报告或浸泡试验为准。</li>
+      <li>「需实测验证」表示该材质与该介质的组合缺乏充分公开数据，并非不能用，但必须先做相容性试验。</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>密封件.cn · O 型圈规格查询工具 · 数据标准 GB/T 3452.1-2005（等同 ISO 3601-1）</p>
+    <p>本工具为纯前端页面，可离线使用。如需选型确认、样件试装或批量报价，<a href="/contact/">点此询价</a>。</p>
+  </footer>
+</main>
+
+<script>
+window.SEAL_DATA = /*__SEAL_DATA__*/;
+</script>
+<script>
+(function(){
+  "use strict";
+  var D = window.SEAL_DATA || {specs:[],materials:[],media:[]};
+  var SPECS = D.specs || [], MATS = D.materials || [], MEDIA = D.media || [];
+  var COST = {"低":20,"中":18,"中高":16,"高":12,"极高":4};
+
+  function $(id){return document.getElementById(id);}
+  function fmt(n){ var s = (Math.round(n*1000)/1000).toString(); return s; }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+  function num(v){ var x = parseFloat(v); return isNaN(x) ? null : x; }
+
+  /* ---------- tabs ---------- */
+  var tabs = document.querySelectorAll(".tabs button");
+  function switchTab(pid){
+    Array.prototype.forEach.call(tabs, function(x){
+      var on = x.getAttribute("data-panel") === pid;
+      x.classList.toggle("on", on); x.setAttribute("aria-selected", on ? "true" : "false");
+    });
+    Array.prototype.forEach.call(document.querySelectorAll(".panel"), function(p){
+      p.classList.toggle("on", p.id === pid);
+    });
+  }
+  Array.prototype.forEach.call(tabs, function(b){
+    b.addEventListener("click", function(){ switchTab(b.getAttribute("data-panel")); });
+  });
+
+  /* ---------- title / static content ---------- */
+  document.title = "O型圈规格查询工具（" + SPECS.length + "条GB/T 3452.1标准规格）| 尺寸查询·近似匹配·材质选型";
+  $("cntSpecs").textContent = SPECS.length;
+
+  /* ================= 1. 尺寸查询 ================= */
+  function renderSpecRows(rows){
+    if(!rows.length) return '<div class="empty">没有匹配的规格。<br>建议改用「近似匹配」输入实测值，或检查是否填了非标尺寸。</div>';
+    var h = '<div class="tblbox"><table><thead><tr>'
+      + '<th>规格代号 d1×d2</th><th class="num">内径 d1</th><th class="num">内径公差</th>'
+      + '<th class="num">截面 d2</th><th class="num">截面公差</th><th class="num">外径 d3</th><th>标准</th>'
+      + '</tr></thead><tbody>';
+    rows.forEach(function(r){
+      h += '<tr><td class="code">' + esc(r.id) + '</td>'
+        + '<td class="num">' + fmt(r.d1) + '</td>'
+        + '<td class="num">±' + r.tol_d1 + '</td>'
+        + '<td class="num">' + fmt(r.d2) + '</td>'
+        + '<td class="num">±' + r.tol_d2 + '</td>'
+        + '<td class="num"><b>' + fmt(r.d3) + '</b></td>'
+        + '<td style="color:#7e8fa0;font-size:12.5px">GB/T 3452.1</td></tr>';
+    });
+    return h + '</tbody></table></div>';
+  }
+
+  function query(){
+    var d1 = num($("q1").value), d2 = num($("q2").value), d3 = num($("q3").value);
+    var out = $("res1");
+    if(d1===null && d2===null && d3===null){
+      out.innerHTML = '<div class="empty">请至少填写内径、截面或外径中的一项。</div>'; return;
+    }
+    var rows = SPECS.filter(function(r){
+      if(d1!==null && Math.abs(r.d1-d1)>0.001) return false;
+      if(d2!==null && Math.abs(r.d2-d2)>0.001) return false;
+      if(d3!==null && Math.abs(r.d3-d3)>0.02) return false;
+      return true;
+    });
+    var head = '<div class="resbar"><span class="tag ok">命中 ' + rows.length + ' 条</span>'
+      + '<span>查询条件：' + [d1!==null?("内径 "+fmt(d1)):null, d2!==null?("截面 "+fmt(d2)):null, d3!==null?("外径 "+fmt(d3)):null].filter(Boolean).join(" · ") + '</span></div>';
+    var extra = "";
+    if(!rows.length){
+      // 给出近似建议
+      var base = (d1!==null)?d1:null;
+      if(base!==null){
+        var near = SPECS.slice().sort(function(a,b){ return Math.abs(a.d1-base)-Math.abs(b.d1-base); }).slice(0,5);
+        extra = '<div class="legend">内径 ' + fmt(base) + ' 附近的标准内径有：'
+          + near.map(function(r){ return '<b>' + esc(r.id) + '</b>'; }).join('、')
+          + '。可直接用「近似匹配」页签做精确推荐。</div>';
+      }
+    }
+    out.innerHTML = head + renderSpecRows(rows) + extra;
+  }
+  $("btnQuery").addEventListener("click", query);
+  $("btnReset1").addEventListener("click", function(){ $("q1").value=""; $("q2").value=""; $("q3").value=""; $("res1").innerHTML=""; });
+  ["q1","q2","q3"].forEach(function(id){
+    $(id).addEventListener("keydown", function(e){ if(e.key==="Enter") query(); });
+  });
+
+  /* ================= 2. 近似匹配 ================= */
+  // 距离：内径权重 1.0，截面权重 3.0（截面偏差对密封影响更大）
+  function nearMatch(m1, m2){
+    return SPECS.map(function(r){
+      var dd1 = (m1===null)?0:Math.abs(r.d1-m1);
+      var dd2 = (m2===null)?0:Math.abs(r.d2-m2);
+      // 截面偏差权重 3 倍：截面不对会直接破坏压缩率
+      var dist = dd1*1.0 + dd2*3.0;
+      var score = Math.max(0, 100 - dist*12);
+      return {r:r, dist:dist, score:score};
+    }).sort(function(a,b){
+      if(Math.abs(a.dist-b.dist) < 1e-6) return a.r.d2 - b.r.d2;  // 同分时截面小的优先
+      return a.dist - b.dist;
+    });
+  }
+
+  function near(){
+    var d1 = num($("n1").value), d2 = num($("n2").value);
+    var out = $("res2");
+    if(d1===null && d2===null){ out.innerHTML = '<div class="empty">请输入实测内径（建议同时填实测截面，结果更准）。</div>'; return; }
+    // 实测值做轻微修正：橡胶件实测会偏大，按经验值不做强制修正，仅提示
+    var list = nearMatch(d1, d2).slice(0, 12);
+    var h = '<div class="resbar"><span class="tag ok">推荐前 12 个最接近规格</span>'
+      + '<span>实测：' + (d1!==null?("内径 "+fmt(d1)):"—") + ' · ' + (d2!==null?("截面 "+fmt(d2)):"截面未填") + '</span></div>';
+    h += '<div class="tblbox"><table><thead><tr><th>排序</th><th>推荐规格</th><th class="num">匹配度</th>'
+      + '<th class="num">内径</th><th class="num">截面</th><th class="num">外径</th><th>说明</th></tr></thead><tbody>';
+    list.forEach(function(o, i){
+      var r = o.r, note;
+      if(o.score>=98) note = '<span class="tag ok">高度吻合</span>';
+      else if(o.score>=90) note = '<span class="tag ok">可用</span>';
+      else if(o.score>=80) note = '<span class="tag warn">需确认安装空间</span>';
+      else note = '<span class="tag bad">偏差偏大</span>';
+      h += '<tr><td class="num">' + (i+1) + '</td>'
+        + '<td class="code">' + esc(r.id) + '</td>'
+        + '<td class="num"><span class="score">' + o.score.toFixed(0) + '%</span><div class="bar"><i style="width:' + Math.max(2,o.score) + '%"></i></div></td>'
+        + '<td class="num">' + fmt(r.d1) + '</td>'
+        + '<td class="num">' + fmt(r.d2) + '</td>'
+        + '<td class="num">' + fmt(r.d3) + '</td>'
+        + '<td>' + note + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+    h += '<div class="legend">匹配度 = 100 − (|Δ内径| × 1 + |Δ截面| × 3) × 12，截面偏差权重更高，因为截面不对直接影响压缩率与密封效果。'
+      + '橡胶旧件长期受压后实测内径通常略小于原始尺寸，若结果卡在两个规格之间，优先选内径略大的一侧，靠压缩量补偿。</div>';
+    out.innerHTML = h;
+  }
+  $("btnNear").addEventListener("click", near);
+  $("btnReset2").addEventListener("click", function(){ $("n1").value=""; $("n2").value=""; $("res2").innerHTML=""; });
+  ["n1","n2"].forEach(function(id){ $(id).addEventListener("keydown", function(e){ if(e.key==="Enter") near(); }); });
+
+  /* ================= 3. 材质选型 ================= */
+  // 填充介质下拉
+  (function(){
+    var sel = $("m1");
+    var groups = {};
+    MEDIA.forEach(function(m){ (groups[m.cat] = groups[m.cat] || []).push(m); });
+    Object.keys(groups).forEach(function(cat){
+      var og = document.createElement("optgroup"); og.label = cat;
+      groups[cat].forEach(function(m){
+        var o = document.createElement("option"); o.value = m.id; o.textContent = m.name; og.appendChild(o);
+      });
+      sel.appendChild(og);
+    });
+    sel.value = "hydraulic_mineral";
+  })();
+
+  var REC = {"static_face":{"r":"20% ~ 25%","h":"70 Shore A"},"static_radial":{"r":"15% ~ 20%","h":"70 Shore A"},
+             "dynamic_rec":{"r":"12% ~ 18%","h":"80 Shore A"},"dynamic_rot":{"r":"8% ~ 12%","h":"90 Shore A"}};
+
+  function selectMaterial(){
+    var t = num($("t1").value);
+    var mid = $("m1").value;
+    var scene = $("s1").value;
+    var out = $("res3");
+    if(t===null){ out.innerHTML = '<div class="empty">请输入工作温度。</div>'; return; }
+    var media = MEDIA.filter(function(m){ return m.id===mid; })[0] || {name:"—",id:mid};
+
+    var yes = [], maybe = [], check = [], no = [];
+    MATS.forEach(function(m){
+      var reasons = [];
+      var inRange = (t >= m.temp_min && t <= m.temp_max);
+      var inPeak  = (!inRange && t > m.temp_max && t <= (m.peak||m.temp_max));
+      if(!inRange && !inPeak){
+        no.push({m:m, why:"该材质长期工作温度区间为 " + m.temp_min + " ~ " + m.temp_max + " ℃，" + t + " ℃ 已超出范围"});
+        return;
+      }
+      if((m.bad||[]).indexOf(mid) >= 0){
+        no.push({m:m, why:(m.bad_reason||{})[mid] || "该材质与此介质不兼容"});
+        return;
+      }
+      var margin = Math.min(t - m.temp_min, m.temp_max - t);
+      var tempScore = Math.max(0, Math.min(1, margin/50)) * 30;
+      var good = (m.good||[]).indexOf(mid) >= 0;
+      var mediaScore = good ? 40 : 0;
+      var costScore = (COST[m.price_level] !== undefined) ? COST[m.price_level] : 10;
+      var adjust = (m.code === "PTFE") ? -8 : 0;   // PTFE 无弹性，仅静密封
+      if(inPeak) adjust -= 6;
+      var score = tempScore + mediaScore + costScore + adjust;
+      var item = {m:m, score:score, good:good, inPeak:inPeak,
+        edge: (Math.abs(t - m.temp_max) <= 10 || Math.abs(t - m.temp_min) <= 10)};
+      if(good && score >= 70) yes.push(item);
+      else if(good) maybe.push(item);
+      else if(score >= 60) maybe.push(item);
+      else check.push(item);
+    });
+    yes.sort(function(a,b){ return b.score - a.score; });
+    maybe.sort(function(a,b){ return b.score - a.score; });
+    check.sort(function(a,b){ return b.score - a.score; });
+
+    var h = '<div class="resbar"><span class="tag ok">已评估 ' + MATS.length + ' 种材质</span>'
+      + '<span>工况：' + t + ' ℃ · ' + esc(media.name) + ' · ' + esc($("s1").options[$("s1").selectedIndex].text) + '</span></div>';
+
+    function cards(arr, cls, title){
+      if(!arr.length) return "";
+      var s = '<h3 style="margin:22px 0 10px;font-size:16px">' + title + '（' + arr.length + '）</h3><div class="mgrid">';
+      arr.forEach(function(o){
+        var m = o.m;
+        s += '<div class="mat ' + cls + '">'
+          + '<h4>' + esc(m.name) + ' <span class="tag">' + esc(m.code) + '</span>'
+          + (o.good ? '<span class="tag ok">介质记录：耐</span>' : '<span class="tag warn">介质记录：需实测</span>')
+          + (o.inPeak ? '<span class="tag warn">仅短时峰值可用</span>' : '')
+          + (o.edge ? '<span class="tag warn">接近耐温边界</span>' : '')
+          + '</h4>'
+          + '<div class="sub">' + esc(m.en) + ' · 综合评分 ' + o.score.toFixed(0) + '</div>'
+          + '<div class="kv"><i>耐温 ' + m.temp_min + '~' + m.temp_max + ' ℃</i><i>峰值 ' + (m.peak||m.temp_max) + ' ℃</i>'
+          + '<i>硬度 ' + esc(m.hardness_range) + '</i><i>成本 ' + esc(m.price_level) + '</i><i>常用色 ' + esc(m.color) + '</i></div>'
+          + '<p>' + esc(m.summary) + '</p></div>';
+      });
+      return s + '</div>';
+    }
+
+    h += cards(yes, "top", "推荐材质");
+    h += cards(maybe, "", "可选材质（次选或需确认）");
+    h += cards(check, "", "需实测验证（介质相容性数据不足）");
+
+    if(no.length){
+      h += '<div class="excl"><h4>已排除材质（' + no.length + ' 种）· 排除原因</h4>';
+      no.forEach(function(o){
+        h += '<div class="exclitem"><b>' + esc(o.m.name) + '（' + esc(o.m.code) + '）</b><span>' + esc(o.why) + '</span></div>';
+      });
+      h += '</div>';
+    }
+
+    var rg = REC[scene] || REC.static_face;
+    h += '<div class="note" style="margin-top:20px"><h3>本工况配套参数建议</h3><ul>'
+      + '<li>推荐硬度：<b>' + rg.h + '</b>（按' + esc($("s1").options[$("s1").selectedIndex].text) + '）</li>'
+      + '<li>推荐压缩率：<b>' + rg.r + '</b></li>'
+      + '<li>安装前请在沟槽内涂少量相容润滑脂，避免装配划伤；高压（&gt;16 MPa）工况建议加装挡圈防挤出。</li>'
+      + '</ul></div>';
+
+    /* 转化入口：把当前工况直接带到询单页，不用重新填一遍 */
+    h += '<div style="margin-top:22px;border:1px solid var(--line,#e5e7eb);background:#f8fafc;border-radius:12px;padding:18px 20px">'
+      + '<h3 style="margin:0 0 8px;font-size:16px">要按这个工况拿货或比价？</h3>'
+      + '<p style="margin:0 0 14px;font-size:14px;color:#4b5563">温度与介质已经带过去了，不用重新填。补充尺寸、数量与压力，我们按你的工况给材质、硬度与阶梯价。</p>'
+      + '<a class="btn" href="/contact/?media=' + encodeURIComponent(mid) + '&t=' + t + '" style="display:inline-block">按此工况询价 →</a>'
+      + '</div>';
+
+    out.innerHTML = h;
+  }
+  $("btnMat").addEventListener("click", selectMaterial);
+  $("btnReset3").addEventListener("click", function(){ $("t1").value=150; $("t1r").value=150; $("m1").value="hydraulic_mineral"; $("s1").value="static_face"; $("res3").innerHTML=""; });
+  $("t1r").addEventListener("input", function(){ $("t1").value = this.value; });
+  $("t1").addEventListener("input", function(){ var v=num(this.value); if(v!==null && v>=-60 && v<=300) $("t1r").value=v; });
+  $("m1").addEventListener("change", function(){ if($("res3").innerHTML) selectMaterial(); });
+  $("s1").addEventListener("change", function(){ if($("res3").innerHTML) selectMaterial(); });
+
+  /* ================= 4. 规格总表 ================= */
+  (function(){
+    var sel = $("f2");
+    var cs = [];
+    SPECS.forEach(function(r){ if(cs.indexOf(r.d2)<0) cs.push(r.d2); });
+    cs.sort(function(a,b){return a-b;});
+    sel.innerHTML = '<option value="">全部截面</option>' + cs.map(function(c){
+      var n = SPECS.filter(function(r){return r.d2===c;}).length;
+      return '<option value="' + c + '">' + fmt(c) + ' mm（' + n + ' 条）</option>';
+    }).join("");
+  })();
+
+  function table(){
+    var cs = $("f2").value, q = ($("fq").value||"").trim().replace("X","x").replace("*","x");
+    var rows = SPECS.filter(function(r){
+      if(cs && r.d2 !== parseFloat(cs)) return false;
+      if(q){
+        var hay = r.id + " " + r.d1 + " " + r.d2 + " " + r.d3;
+        if(hay.indexOf(q) < 0) return false;
+      }
+      return true;
+    });
+    $("res4").innerHTML = '<div class="resbar"><span class="tag ok">共 ' + rows.length + ' 条</span>'
+      + '<span class="legend" style="margin:0">外径 d3 = d1 + 2×d2｜公差为标称值</span></div>' + renderSpecRows(rows);
+  }
+  $("f2").addEventListener("change", table);
+  $("fq").addEventListener("input", table);
+  $("btnPrint").addEventListener("click", function(){ window.print(); });
+
+  /* 默认渲染总表 */
+  table();
+
+  /* ================= URL 参数直达（便于分享与收藏） =================
+     ?d1=20&d2=2.65        尺寸查询
+     ?n1=19.8&n2=2.7       近似匹配
+     ?t=150&media=hydraulic_mineral&scene=static_face   材质选型
+  ================================================================= */
+  (function(){
+    var p = new URLSearchParams(location.search);
+    function has(k){ return p.has(k) && p.get(k) !== ""; }
+    if(has("d1") || has("d2") || has("d3")){
+      if(has("d1")) $("q1").value = p.get("d1");
+      if(has("d2")) $("q2").value = p.get("d2");
+      if(has("d3")) $("q3").value = p.get("d3");
+      switchTab("p1"); query();
+    } else if(has("n1") || has("n2")){
+      if(has("n1")) $("n1").value = p.get("n1");
+      if(has("n2")) $("n2").value = p.get("n2");
+      switchTab("p2"); near();
+    } else if(has("t")){
+      $("t1").value = p.get("t");
+      $("t1r").value = p.get("t");
+      if(has("media")) $("m1").value = p.get("media");
+      if(has("scene")) $("s1").value = p.get("scene");
+      switchTab("p3"); selectMaterial();
+    }
+  })();
+
+  /* 暴露给自动化测试 */
+  window.__SEAL__ = {query:query, near:near, selectMaterial:selectMaterial, switchTab:switchTab, SPECS:SPECS, MATS:MATS, MEDIA:MEDIA};
+})();
+</script>
+</body>
+</html>
