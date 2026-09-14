@@ -599,8 +599,20 @@ def main():
     articles = parse_content()
     print("内容文章：%d 篇" % len(articles))
 
-    # 静态资源
-    shutil.copy(os.path.join(STATIC, "style.css"), os.path.join(PUB, "style.css"))
+    # 静态资源：static/ 下所有文件原样复制到 public/ 根
+    # 搜索引擎验证文件（BingSiteAuth.xml 等）、图片、字体都放 static/，构建后自动带到站点根目录
+    n_static = 0
+    for dirpath, _, filenames in os.walk(STATIC):
+        for fn in filenames:
+            if fn.startswith("."):
+                continue
+            src = os.path.join(dirpath, fn)
+            rel = os.path.relpath(src, STATIC)
+            dst = os.path.join(PUB, rel)
+            os.makedirs(os.path.dirname(dst), exist_ok=True)
+            shutil.copy(src, dst)
+            n_static += 1
+    print("静态资源：%d 个文件" % n_static)
     os.makedirs(PUB_DATA, exist_ok=True)
     for fn in os.listdir(DATA):
         if fn.endswith(".json"):
