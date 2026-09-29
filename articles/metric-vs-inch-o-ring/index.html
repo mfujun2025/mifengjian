@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>公制与英制 O 型圈：为什么尺寸接近却不能互换 - 密封件.cn</title>
+<meta name="description" content="进口设备换件时最容易踩的坑：量出来的尺寸明明差不多，装上却漏。本文从两套尺寸数列的生成逻辑讲起，给出英制件代用公制沟槽的判断顺序与安全边界。">
+<meta name="keywords" content="公制O型圈,英制O型圈,进口设备密封件替换,AS568和国标区别,英制O型圈尺寸">
+<link rel="canonical" href="https://xn--5nq252acf.cn/articles/metric-vs-inch-o-ring/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="公制与英制 O 型圈：为什么尺寸接近却不能互换 - 密封件.cn">
+<meta property="og:description" content="进口设备换件时最容易踩的坑：量出来的尺寸明明差不多，装上却漏。本文从两套尺寸数列的生成逻辑讲起，给出英制件代用公制沟槽的判断顺序与安全边界。">
+<meta property="og:url" content="https://xn--5nq252acf.cn/articles/metric-vs-inch-o-ring/">
+<meta property="og:site_name" content="密封件.cn">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "公制与英制 O 型圈：为什么尺寸接近却不能互换",
+ "description": "进口设备换件时最容易踩的坑：量出来的尺寸明明差不多，装上却漏。本文从两套尺寸数列的生成逻辑讲起，给出英制件代用公制沟槽的判断顺序与安全边界。",
+ "datePublished": "2026-09-29",
+ "dateModified": "2026-09-29",
+ "inLanguage": "zh-CN",
+ "author": {
+  "@type": "Organization",
+  "name": "密封件.cn"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "密封件.cn"
+ },
+ "mainEntityOfPage": "https://xn--5nq252acf.cn/articles/metric-vs-inch-o-ring/"
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="/">密封件<span>.cn</span></a>
+    <nav class="topnav">
+      <a href="/">首页</a>
+      <a href="/tool/">规格查询</a>
+      <a href="/materials/">材质百科</a>
+      <a href="/articles/">技术文章</a>
+      <a href="/faq/">常见问题</a>
+      <a href="/contact/">选型咨询</a>
+    </nav>
+  </div>
+</header>
+
+
+<article class="article" style="margin:26px 0">
+  <div class="wrap" style="padding:0">
+    <div class="crumb" style="max-width:820px;margin:0 auto 14px"><a href="/">首页</a> / <a href="/articles/">技术文章</a> / 正文</div>
+    <div style="max-width:820px;margin:0 auto">
+      <h1>公制与英制 O 型圈：为什么尺寸接近却不能互换</h1>
+      <div class="meta">2026-09-29　·　技术文章</div>
+      <p>拆开一台进口设备，量下旧 O 型圈截面 3.5 mm，翻出国产 GB/T 3452.1 的规格表，找了个 3.55 mm 换上。装的时候手感到位，压盖也合得上，试压十分钟，渗了。</p>
+<p>这种场景在维修间几乎每周都在发生。问题不在于「差 0.05 mm 能不能用」，而在于<strong>大多数人判断可替换性的方法本身是错的</strong>——比的是「两个数字差多少」，而真正决定能不能换的，是这两个数字各自从哪来、公差带叠在一起后还剩多少压缩量。</p>
+<h2>一、先看一个真实场景：装得进去，封不住</h2>
+<p>一台日系注塑机的端盖静密封，原厂件是 AS568 系列的 <code>-214</code>。维修工按老习惯量了内径，24.99 mm，然后从国标 G 系列里挑了内径最接近的 <code>25×3.55</code>。装上，压紧，开机，两小时后台面见油。</p>
+<p>复盘时量了三组数据：</p>
+<table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>原厂 -214</th>
+<th>代用 25×3.55</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内径（mm）</td>
+<td>24.99</td>
+<td>25.00</td>
+<td>差 0.01，可忽略</td>
+</tr>
+<tr>
+<td>截面（mm）</td>
+<td>3.53</td>
+<td>3.55</td>
+<td>差 0.02，在公差带内</td>
+</tr>
+<tr>
+<td>沟槽标准</td>
+<td>AS568 沟槽表</td>
+<td>GB/T 3452.3</td>
+<td><strong>不同体系</strong></td>
+</tr>
+<tr>
+<td>压缩率（按最小截面）</td>
+<td>17.2%</td>
+<td>12.6%</td>
+<td><strong>低于静态径向下限</strong></td>
+</tr>
+</tbody>
+</table>
+<p>内径和截面都对得上，出问题的是最后两行——<strong>沟槽按美标槽深挖、圈按美标尺寸做，换一个国标件进去，压缩量直接掉出合格区间。</strong></p>
+<p>可替换性的判据不在两个数字的差值，而在尺寸数列的生成方式与公差带叠加后的有效压缩量。</p>
+<h2>二、两套尺寸数列：一个等差，一个等比</h2>
+<p>公制件和英制件最根本的差别，是内径序列的排布逻辑完全不同——不是「换算单位」的问题，是两套数列从设计之初就不打算对齐。</p>
+<p><strong>英制（AS568 体系）的内径走 1/16 英寸等差台阶。</strong> 以 200 系列为例，相邻两号内径固定差 <code>0.0625"</code>（约 1.5875 mm）：0.734 → 0.796 → 0.859 → 0.921 英寸，一路加下去。截面也是固定五档英寸分数：1/16"、3/32"、1/8"、3/16"、1/4"。</p>
+<p><strong>公制（GB/T 3452.1）的内径走优先数系 R10/R20，是等比数列。</strong> 取值像 9.75、10、11.2、12.1、12.5、14、15、16、18、20、22.4、25、25.8、28、30、31.5、35.5、40 ……相邻两档比值大致恒定在 1.12 或 1.06 附近，而不是固定加一个数。</p>
+<p>两个数列放在一起，后果很直接：</p>
+<table>
+<thead>
+<tr>
+<th>英寸内径</th>
+<th>换算 mm</th>
+<th>最接近的 GB 内径</th>
+<th>差值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.734"</td>
+<td>18.64</td>
+<td>18.00</td>
+<td>0.64</td>
+</tr>
+<tr>
+<td>1.109"</td>
+<td>28.17</td>
+<td>28.00</td>
+<td>0.17</td>
+</tr>
+<tr>
+<td>1.359"</td>
+<td>34.52</td>
+<td>35.50</td>
+<td>0.98</td>
+</tr>
+<tr>
+<td>1.734"</td>
+<td>44.04</td>
+<td>45.00</td>
+<td>0.96</td>
+</tr>
+</tbody>
+</table>
+<p>看这张表的规律：<strong>有的差值小到 0.17 mm，有的接近 1 mm，且没有规律。</strong> 等差数列和等比数列只在少数点位「偶然靠近」，其余位置必然错开。这意味着<strong>「找不到完全相等的内径」是常态，不是例外</strong>——按「先在表里找个完全一样的」去换件，多数时候会空手而归，然后随便挑个最接近的，这才是事故的真正起点。</p>
+<h2>三、25.4 换算链上的取整误差</h2>
+<p>换算乘数是 25.4，但这个数在很多环节被取整过，取整那一刀往往比公差还大。</p>
+<p><strong>第一处，英寸分数换算不整。</strong> <code>1/16" = 1.5875 mm</code>、<code>3/32" = 2.3813 mm</code>、<code>1/8" = 3.175 mm</code>、<code>3/16" = 4.7625 mm</code>，没一个是整数。被写成 1.6、2.4、3.2、4.8 时，误差分别是 0.0125、0.0187、0.025、0.0375 mm。</p>
+<p><strong>第二处，AS568 的截面标称值不是纯英寸分数。</strong> 老规格表里 1/16" 系列标 0.070"（1.778 mm）、1/8" 系列标 0.139"（3.531 mm）、3/16" 系列标 0.210"（5.334 mm）——<strong>比对应分数值小，是为配合槽深取整。</strong> 于是同一个「1/8 英寸截面」，图纸上可能看到 3.175（分数换算）、3.53（AS568 标称）、3.55（国标 G 系列）三个数字。</p>
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>数值（mm）</th>
+<th>出现场合</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1/8"</td>
+<td>3.175</td>
+<td>纯单位换算</td>
+<td>分数值本身，非产品尺寸</td>
+</tr>
+<tr>
+<td>0.139"</td>
+<td>3.531</td>
+<td>AS568 规格表</td>
+<td>美标 1/8" 系列产品截面</td>
+</tr>
+<tr>
+<td>3.55</td>
+<td>3.55</td>
+<td>GB/T 3452.1 G 系列</td>
+<td>国标产品截面</td>
+</tr>
+<tr>
+<td>3.5</td>
+<td>3.5</td>
+<td>图纸简写、口算</td>
+<td>近似值，需回溯原表</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第三处杀伤力最大：现场量出的数按最接近的整数写。</strong> 卡尺量一个 0.139" 截面的旧圈读作 3.50 mm，图纸上写成「3.5」。新人拿这份图纸找料，全站没有 3.5 这个规格，于是被推荐 3.55——听着只差 0.05 mm，实际是把美标件换成了国标件，后面沟槽怎么对就没人管了。</p>
+<p><strong>实用判据：拿到「英制换算来的 mm 值」，先问它是分数换算、标称值还是手抄近似值。</strong> 三位小数的多是纯换算；落在 0.070/0.139/0.210/0.275 这类没规律的数才是真产品尺寸。</p>
+<h2>四、沟槽标准的槽深槽宽不是简单换算</h2>
+<p>即使 O 型圈尺寸完全对上，还有一层常被忽略：<strong>两套沟槽标准的尺寸不是同一套逻辑的换算结果。</strong></p>
+<p>GB/T 3452.3 按「内径段 × 截面段」查，槽宽槽深按优先数系取整；AS568 配套沟槽表（源自 SAE 体系）按「Dash 号 × 密封形式」查，槽深由英寸截面乘压缩比得出。两套表是<strong>并行设计</strong>，不是互推。</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>国标沟槽（GB/T 3452.3）</th>
+<th>美标沟槽（AS568 配套）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>查表索引</td>
+<td>内径段 + 截面档</td>
+<td>Dash 号 + 密封形式</td>
+</tr>
+<tr>
+<td>槽宽取值</td>
+<td>按截面档给固定值（如 3.55 配 4.8）</td>
+<td>按英寸截面给固定值（如 0.139" 配 0.187"）</td>
+</tr>
+<tr>
+<td>槽深来源</td>
+<td>由压缩率区间反算后取整</td>
+<td>由英寸截面乘压缩比直接给</td>
+</tr>
+<tr>
+<td>公差方向</td>
+<td>槽宽正公差、槽深负公差</td>
+<td>槽宽正公差、槽深负公差</td>
+</tr>
+</tbody>
+</table>
+<p>关键在于<strong>槽深是压缩率的基数，槽深差 0.05 mm，压缩率能差 2~3 个百分点。</strong> 第一节算例里，代用件表面只差 0.02 mm 截面，压缩率却从 17.2% 掉到 12.6%，掉的全是槽深与截面公差叠加出来的量——<strong>槽深没变，变的是「用哪个截面去除它」。</strong></p>
+<p>这里必须提一个操作原则：<strong>核算压缩率永远按最小截面算，不按标称算。</strong></p>
+<p><code>压缩率 =（截面 − 沟槽深度）÷ 截面</code></p>
+<p>代号 <code>d2</code> 是截面，<code>h</code> 是沟槽深度。截面从 3.55 降到公差下限 3.45，同一个 2.94 mm 槽深，压缩率从 17.2% 升到 14.8%，还没出界；但若代用件公差带整体偏低（截面 3.53 配 −0.10 公差，下限 3.43），同槽深下压缩率就是 14.3%，已贴着静态径向 15% 的下限。<strong>用标称算永远「差不多」，用最小截面算才看得见风险。</strong></p>
+<h2>五、「装得进去但封不住」的三条机理</h2>
+<p>把前面几节拼起来，「装得上但漏」的成因集中在三条，逐条对应排查最快。</p>
+<p><strong>其一，拉伸率被内径差推高。</strong> 内径小的圈装到大轴上，拉伸率上升，截面被拉细，压缩量减小。经验边界是拉伸率 1%~3%（径向静密封），超过 5% 截面明显变细、老化加速。换算成内径差：<strong>轴径 50 mm 时，1% 拉伸对应内径差约 0.5 mm</strong>，超过就要单独算拉伸率，不能当「可忽略」。</p>
+<p><strong>其二，截面公差带与槽深组合后越界。</strong> 这是最常见的漏油原因。判断动作：把代用件的截面公差上下限代入槽深，算出两个极限压缩率，<strong>两个值都落在对应密封形式的区间内才算合格。</strong></p>
+<table>
+<thead>
+<tr>
+<th>密封形式</th>
+<th>压缩率区间</th>
+<th>越界后的典型现象</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态端面</td>
+<td>20% ~ 25%</td>
+<td>低压即渗，压盖再紧无效</td>
+</tr>
+<tr>
+<td>静态径向</td>
+<td>15% ~ 20%</td>
+<td>缓慢渗油，停机会自愈</td>
+</tr>
+<tr>
+<td>往复动态</td>
+<td>12% ~ 18%</td>
+<td>早期爬行、后期刮伤</td>
+</tr>
+<tr>
+<td>旋转动态</td>
+<td>8% ~ 12%</td>
+<td>发热、唇口磨平</td>
+</tr>
+</tbody>
+</table>
+<p><strong>其三，材质没跟着尺寸一起换。</strong> 尺寸对了不等于能换——原厂是 FKM、代用拿 NBR，介质里的酮酯、刹车油或高温蒸汽会直接把新圈吃掉；反之原厂 NBR 换成 VMQ 或 EPDM，碰上矿物油液压系统同样完蛋。<strong>这两类错误在尺寸核算全对时依然泄漏，而且更急（几天到几周内溶胀、变硬、开裂）。</strong> 材质判断独立于尺寸判断，必须分别做。</p>
+<h2>六、可执行的换件判断顺序</h2>
+<p>把前面所有内容压成一套现场动作，按顺序做完再下单，绝大多数坑能避开。</p>
+<p><strong>第一步，确认原件标准归属。</strong> 看设备铭牌产地、图纸标题栏、原件包装上的编号写法。美系常见 Dash 号（<code>-214</code>、<code>-011</code>），日系常见 JIS 编号（<code>P10</code>、<code>G25</code>），欧系常见 <code>内径×截面</code> 写法。<strong>编号形态本身就是最好的线索，比量尺寸可靠。</strong></p>
+<p><strong>第二步，内径与截面都量，各量三点。</strong> 内径用锥形规或在压缩状态下量配合轴径，截面用卡尺量三处取中位。<strong>截面是压缩率的基数，量错截面的后果远大于量错内径。</strong></p>
+<p><strong>第三步，把候选件的公差带代入实测槽深，算极限压缩率。</strong> 用上表核对区间，两个极限值都合格才进入下一步——这是整个流程里唯一不能省的计算。</p>
+<p><strong>第四步，单独判材质。</strong> 查清介质、温度、压力三项，按站内工具页的推荐复核。特别注意硅橡胶与 EPDM 都不耐矿物油、NBR 不耐臭氧与酮酯刹车油、FKM 不耐酮酯与高温热水蒸汽——这几类组合错了，尺寸再准也白搭。</p>
+<p><strong>第五步，写下单规格。</strong> 采购单不能只写「3.55 × 25」，应写成「<strong>内径 25.0 × 截面 3.55，GB/T 3452.1 G 系列，材质 XXX，硬度 70 Shore A</strong>」，代用件另加一句「代某某进口件」。只写两个数字，供应商发什么料全靠运气。</p>
+<p>如果手上没有完整图纸、只能凭旧件猜规格，最省事的办法是把内径、截面、介质、温度四项输进站内工具页 <code>/tool/</code>，它会按尺寸匹配度、温度余量和介质兼容性一起给推荐，并标出哪些材质属于「需验证」。<strong>尺寸和材质放在同一个判断里看，比分开猜两次可靠得多。</strong></p>
+<p>需要代用方案复核或非标定制，可以直接走 <code>/contact/</code> 把工况发过来——尺寸、介质、温度、压力四项给全，比只发一张旧件照片有用得多。</p>
+<h2>七、几个常见误区的澄清</h2>
+<p><strong>误区一：「差 0.1 mm 以内都能换。」</strong> 不成立。0.1 mm 是差值，不是压缩率。截面差 0.1 mm 在 3.55 的基数上是 2.8%，落在公差带内；同样的 0.1 mm 用在 1.8 截面小圈上就是 5.6%，直接把压缩率推出区间。<strong>判据必须换算成压缩率，不能停在毫米。</strong></p>
+<p><strong>误区二：「内径差不多就行。」</strong> 内径差影响拉伸率与安装难度，截面差影响密封能力。多数失效案里出问题的都是截面和沟槽，内径反而最不敏感。<strong>优先核对截面与槽深，其次才是内径。</strong></p>
+<p><strong>误区三：「进口件贵、国产件便宜，先换便宜的试试。」</strong> 试错成本不对称。密封件单价几十元，一次非计划停机的损失是它的几个数量级。<strong>在停机成本高的位置，密封件价格不构成决策变量</strong>；要省钱应在批量、规格合并和材质档位上做，不是赌关键密封位。</p>
+<p><strong>误区四：「同尺寸的都能当通用替代。」</strong> 尺寸相同但标准体系不同的两件，沟槽设计前提就不同。真要通用替代，前提是<strong>两套沟槽标准的槽深与槽宽同时能对上</strong>，需要逐项查表确认，不是靠尺寸相等推出来的。</p>
+<h2>一句话总结</h2>
+<p>公制与英制 O 型圈能不能换，判的不是两个数字差多少，而是<strong>两套尺寸数列能否落在同一个沟槽里、公差带叠加后压缩率是否还在区间内、材质是否同时兼容</strong>——三项都过了才叫能换。</p>
+      <div class="cta">
+        <h3>需要按你的实际工况定材质或规格？</h3>
+        <p>用工具输入温度与介质，可以直接看到推荐材质与被排除材质的原因；也可以把工况发给我们做一对一的选型确认。</p>
+        <a class="btn solid" href="/tool/" style="margin-right:10px">打开选型工具</a>
+        <a class="btn solid" href="/contact/">提交工况咨询</a>
+      </div>
+      <div class="rel"><h3>相关阅读</h3><ul><li><a href="/articles/o-ring-size-notation/">O 型圈规格怎么看：内径×截面、公差与 GB/T 3452.1 的表示法</a></li><li><a href="/articles/o-ring-material-selection/">O 型圈材质选型速查表：按温度和介质三步定材质</a></li><li><a href="/articles/o-ring-compression-groove-design/">O 型圈压缩率怎么取：静密封、往复动密封与旋转密封的沟槽设计要点</a></li><li><a href="/articles/o-ring-standards-comparison/">O 型圈标准对照：GB/T 3452.1、ISO 3601、JIS B 2401 与 AS568 能不能互换</a></li></ul></div>
+    </div>
+  </div>
+</article>
+
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>密封件.cn</h4>
+        <p>O 型密封圈规格查询与选型参考站。规格数据依据 GB/T 3452.1-2005（等同采用 ISO 3601-1），材质结论来自工程实践归纳，供设计选型与采购比对使用。</p>
+      </div>
+      <div>
+        <h4>工具与资料</h4>
+        <ul>
+          <li><a href="/tool/">O型圈规格查询工具</a></li>
+          <li><a href="/materials/">材质百科</a></li>
+          <li><a href="/articles/">技术文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>服务</h4>
+        <ul>
+          <li><a href="/contact/">选型咨询与报价</a></li>
+          <li><a href="/about/">关于本站</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      © 2026 密封件.cn　本站数据仅供参考，正式定型请以厂家实测报告及标准原文为准。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
