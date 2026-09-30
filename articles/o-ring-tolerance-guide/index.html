@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O 型圈尺寸公差与检验：哪些尺寸必须量、怎么量 - 密封件.cn</title>
+<meta name="description" content="同一批 O 型圈，卡尺量 2.62、投影仪量 2.68，两个数都在公差带里。本文只回答一件事：验收动作本身怎么做——量哪两个尺寸、选什么量具、抽多少件、判收判退的门槛怎么定。">
+<meta name="keywords" content="O型圈公差,密封圈尺寸检验,O型圈测量方法,GB/T 3452.1,来料检验">
+<link rel="canonical" href="https://xn--5nq252acf.cn/articles/o-ring-tolerance-guide/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="O 型圈尺寸公差与检验：哪些尺寸必须量、怎么量 - 密封件.cn">
+<meta property="og:description" content="同一批 O 型圈，卡尺量 2.62、投影仪量 2.68，两个数都在公差带里。本文只回答一件事：验收动作本身怎么做——量哪两个尺寸、选什么量具、抽多少件、判收判退的门槛怎么定。">
+<meta property="og:url" content="https://xn--5nq252acf.cn/articles/o-ring-tolerance-guide/">
+<meta property="og:site_name" content="密封件.cn">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "O 型圈尺寸公差与检验：哪些尺寸必须量、怎么量",
+ "description": "同一批 O 型圈，卡尺量 2.62、投影仪量 2.68，两个数都在公差带里。本文只回答一件事：验收动作本身怎么做——量哪两个尺寸、选什么量具、抽多少件、判收判退的门槛怎么定。",
+ "datePublished": "2026-09-30",
+ "dateModified": "2026-09-30",
+ "inLanguage": "zh-CN",
+ "author": {
+  "@type": "Organization",
+  "name": "密封件.cn"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "密封件.cn"
+ },
+ "mainEntityOfPage": "https://xn--5nq252acf.cn/articles/o-ring-tolerance-guide/"
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="/">密封件<span>.cn</span></a>
+    <nav class="topnav">
+      <a href="/">首页</a>
+      <a href="/tool/">规格查询</a>
+      <a href="/materials/">材质百科</a>
+      <a href="/articles/">技术文章</a>
+      <a href="/faq/">常见问题</a>
+      <a href="/contact/">选型咨询</a>
+    </nav>
+  </div>
+</header>
+
+
+<article class="article" style="margin:26px 0">
+  <div class="wrap" style="padding:0">
+    <div class="crumb" style="max-width:820px;margin:0 auto 14px"><a href="/">首页</a> / <a href="/articles/">技术文章</a> / 正文</div>
+    <div style="max-width:820px;margin:0 auto">
+      <h1>O 型圈尺寸公差与检验：哪些尺寸必须量、怎么量</h1>
+      <div class="meta">2026-09-30　·　技术文章</div>
+      <p>一批 1.8 mm 截面的圈，甲方抽检 30 件，卡尺读数最小 1.72、最大 1.88；供方用自己的投影仪复测同一批，读到 1.74 到 1.86。两边都不算错，GB/T 3452.1 给 1.8 截面写的公差是 ±0.08，18 件读数全都落在合格带里——<strong>可如果甲方判退的判据写的是"卡尺读数不得低于 1.75"，这批货就是不合格品，供方拿自己的数据申诉也翻不了案。</strong></p>
+<p>这类争议几乎每周都在发生，根源不在产品，在<strong>验收动作没有定义清楚</strong>：用什么量具、量哪个尺寸、抽多少件、判定门槛是多少。前几篇讲过公差"是多少"，本篇只讲"怎么量、怎么判"。</p>
+<h2>一、先定优先级：截面 &gt; 内径 &gt; 外径</h2>
+<p>验收时间有限，必须知道哪个尺寸错了代价最大——截面错了整批报废，内径偏了改沟槽还能救。排序如下：</p>
+<table>
+<thead>
+<tr>
+<th>尺寸</th>
+<th>地位</th>
+<th>错了会怎样</th>
+<th>抽检强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>截面直径 d2</td>
+<td><strong>关键尺寸</strong></td>
+<td>压缩率的分母，偏一点压缩率就整体漂移</td>
+<td>每批必测，多点取中位数</td>
+</tr>
+<tr>
+<td>内径 d1</td>
+<td><strong>重要尺寸</strong></td>
+<td>影响拉伸率与装配，超差表现为"装不上"</td>
+<td>每批必测</td>
+</tr>
+<tr>
+<td>外径 d3</td>
+<td>推导尺寸</td>
+<td>等于 d1 + 2×d2</td>
+<td>不单独判定</td>
+</tr>
+<tr>
+<td>圆度 / 椭圆度</td>
+<td>过程指标</td>
+<td>超差说明模具或硫化不稳</td>
+<td>精密件测</td>
+</tr>
+</tbody>
+</table>
+<p><strong>外径不是一个独立受控尺寸。</strong> 国标只规定内径与截面这两个基量，外径是算出来的（<code>d3 = d1 + 2 × d2</code>）。所以"量外径对不上号"不能作为判退理由，它只能提示你前两个尺寸里至少有一个不对。</p>
+<h2>二、量具选型：不同量法能差出 0.08 mm</h2>
+<p>O 型圈是弹性体，<strong>任何接触式测量都会把圈压变形，读数必然偏小</strong>。量具的选择本质上是在"效率"和"不施加测量力"之间取舍。</p>
+<table>
+<thead>
+<tr>
+<th>量具</th>
+<th>测什么</th>
+<th>测量力影响</th>
+<th>相对偏差量级</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>游标 / 带表卡尺</td>
+<td>内径、外径</td>
+<td>大，靠手感控制</td>
+<td><strong>可达 0.05~0.10 mm</strong>，受压越软偏差越大</td>
+<td>现场粗筛，不作判定依据</td>
+</tr>
+<tr>
+<td>锥形量规（锥规）</td>
+<td>内径</td>
+<td>极低，靠自重力落位</td>
+<td>优于卡尺，重复性好</td>
+<td><strong>车间推荐的常规内径检具</strong></td>
+</tr>
+<tr>
+<td>光学投影仪 / 工具显微镜</td>
+<td>内径、截面</td>
+<td>零（非接触）</td>
+<td>可达 ±0.01 mm</td>
+<td>小规格、精密件、争议复测</td>
+</tr>
+<tr>
+<td>激光测径仪</td>
+<td>截面</td>
+<td>零</td>
+<td>与非接触法一致</td>
+<td>批量截面筛查</td>
+</tr>
+<tr>
+<td>切片投影</td>
+<td>截面</td>
+<td>零，但破坏样品</td>
+<td>与投影法同级</td>
+<td>争议仲裁、首件确认</td>
+</tr>
+</tbody>
+</table>
+<p>三条实战经验，直接决定你量出来的数字可不可信：</p>
+<p><strong>第一，卡尺读数系统性偏小。</strong> 橡胶受压变形，两爪一夹截面就矮了，硬度越低偏得越多。卡尺读出的 1.72（标称 1.8）看似「走下差」，实际可能只是被夹扁。</p>
+<p><strong>第二，锥规测内径比投影仪更准更快。</strong> 这与直觉相反——投影仪精度虽高，但<strong>O 型圈自由状态下并不圆</strong>（椭圆、轻微波浪），在屏幕上量三条均布直径取平均反而放大误差，大规格件尤甚。锥规靠圈自身张力自然落位，一致性更好。</p>
+<p><strong>第三，切片投影与直立反射光测量有系统性差值。</strong> 圈竖直固定在工具显微镜上用反射光量轴向线径，读数比切片投影<strong>小 0.05~0.10 mm</strong>；测径向线径时两种方法无明显差异。所以争议复测必须先在双方<strong>约定同一种方法</strong>。GB/T 3452.2-2007 也写明：发生争议时测量方法应由制造商与用户协商确定。</p>
+<p><strong>环境温度同样是变量。</strong> 橡胶线膨胀量级在 0.02%~0.05%，标准测量环境为 23±2℃。刚从冷库或热机拆下的圈直接量，量到的是温度。</p>
+<h2>三、抽多少件：把"量几个"换成抽样方案</h2>
+<p>凭经验抽 3 件、5 件最容易出事——样品量太少，3% 的不合格率极大概率被漏掉。正规做法走 <strong>GB/T 2828.1-2012</strong>（等同采用 ISO 2859-1）的计数抽样：</p>
+<ol>
+<li><strong>定批量 N 和检验水平</strong>。无特殊要求用<strong>一般检验水平 II</strong>；判别力要求高、检验成本低用水平 III；检验具破坏性（如切片投影）用水平 I 或特殊水平 S-1~S-4。</li>
+<li><strong>定 AQL</strong>。按缺陷严重程度分档：致命缺陷（裂纹、缺料、穿刺）取 <strong>0.10~0.15</strong>；主要缺陷（截面、内径超差）取 <strong>1.0~1.5</strong>；次要缺陷（轻微毛边、色差）取 <strong>4.0~6.5</strong>。</li>
+<li><strong>查样本量字码，再查抽样方案</strong>，读出样本量 n 与接收数 Ac、拒收数 Re；遇箭头沿箭头方向取第一组数值。</li>
+<li><strong>判定</strong>：不合格品数 d ≤ Ac 接收整批；d ≥ Re（一般 Re = Ac+1）拒收。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>批量 N</th>
+<th>检验水平</th>
+<th>字码</th>
+<th>样本量 n</th>
+<th>AQL=1.0 时 Ac / Re</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>151~280</td>
+<td>II</td>
+<td>G</td>
+<td>32</td>
+<td>1 / 2</td>
+</tr>
+<tr>
+<td>281~500</td>
+<td>II</td>
+<td>H</td>
+<td>50</td>
+<td>1 / 2</td>
+</tr>
+<tr>
+<td>501~1200</td>
+<td>II</td>
+<td>J</td>
+<td>80</td>
+<td>2 / 3</td>
+</tr>
+<tr>
+<td>1201~3200</td>
+<td>II</td>
+<td>K</td>
+<td>125</td>
+<td>3 / 4</td>
+</tr>
+</tbody>
+</table>
+<p>注意字码 H 那一行：抽 50 件，<strong>允收 1 件、第 2 件就拒收整批</strong>。这就是"抽 5 件全合格就放行"和正规抽样之间的差距——前者的实际风险远高于直觉。以上为一次正常检验的典型值，正式检验请以 GB/T 2828.1 现行标准表为准。</p>
+<h2>四、判定门槛：三档口径必须写死</h2>
+<p>最容易埋雷的地方是判定口径模糊。"符合 GB/T 3452.1"这句话在争议时毫无约束力。实际要落到三档之一：</p>
+<p><strong>标称值口径</strong>（标称 1.8 ±0.08，实测落在 1.72~1.88 即合格）最宽松，允许压缩率波动；<strong>公差带口径</strong>（实测值须落在标准公差带内）是常规验收默认用的一档；<strong>功能窗口口径</strong>（实测压缩率须落在推荐区间内）最严，要先确定沟槽深度，用于高压、动密封与精密件。</p>
+<p>第二档与第三档的区别要看一个实算：沟槽深 1.52 mm、圈标称 1.8（公差 ±0.08）。</p>
+<table>
+<thead>
+<tr>
+<th>实测截面</th>
+<th>压缩率</th>
+<th>静态径向（15%~20%）判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.72（下差极限）</td>
+<td>11.6%</td>
+<td>不合格：低于窗口</td>
+</tr>
+<tr>
+<td>1.78</td>
+<td>14.6%</td>
+<td>不合格：仍略低于窗口</td>
+</tr>
+<tr>
+<td>1.80（标称）</td>
+<td>15.6%</td>
+<td>合格：刚进窗口</td>
+</tr>
+<tr>
+<td>1.88（上差极限）</td>
+<td>19.1%</td>
+<td>合格</td>
+</tr>
+</tbody>
+</table>
+<p>结论很直接：<strong>这一批圈即使 100% 落在公差带里，也可能大半不合格。</strong> 原因是沟槽深度按标称截面设计时，把全部公差余量都让给了「偏小」的一侧。所以高压、动密封场合不能用公差带口径验收，必须换算成压缩率窗口——沟槽深度先定下来，反推截面允许的实测范围。换算用<a href="/tool/">规格查询工具</a>输入尺寸与沟槽深即可看到压缩率。</p>
+<h2>五、外观与硬度：两项容易漏掉的验收动作</h2>
+<p><strong>外观</strong>依据 GB/T 3452.2-2007（等同采用 ISO 3601-3:2005），分 N、S、CS 三级，越往后越严：<strong>N 级</strong>用于一般工业，<strong>S 级</strong>用于汽车与精密装配，<strong>CS 级</strong>用于航天军工与生命安全场合。采购未规定等级时默认按 N 级；特定航空航天应用按 S 级。</p>
+<p>判定规则里有三条硬口径值得记住：</p>
+<ul>
+<li><strong>观察条件</strong>：自然状态下、适当灯光下<strong>用 2 倍放大镜</strong>观察，表面不得有超过限值的裂纹、破裂、气泡或其他缺陷。</li>
+<li><strong>数量限制</strong>：限值内的流痕、缺料、凹痕，N 级与 S 级在圆周上<strong>任意 25 mm 长度内不得超过 3 处</strong>；CS 级不得超过 1 处，且<strong>缺陷之间不允许相互连接</strong>。</li>
+<li><strong>杂质零容忍</strong>：上述观察条件下，圈表面<strong>不允许嵌入外来杂质</strong>。硬质或金属夹杂在动密封里等于砂纸。</li>
+</ul>
+<p>一级拒收项不用量：<strong>裂纹、切口或撕裂、缺料、气泡（真空与动密封场合）、硬质夹杂、密封接触面上任何缺陷</strong>。可控项里，错位与毛边的限值按截面直径分档，截面越大限值越宽。</p>
+<p><strong>硬度</strong>依据 GB/T 531.1（对应 ISO 7619-1），三个动作最关键：试样厚度需 ≥6 mm，不足时叠层但<strong>最多三层</strong>且层间无空气间隙；<strong>压针接触后 1 秒内读数</strong>；每试样测 <strong>5 点取中位数</strong>，测点距边缘 ≥12 mm、相邻测点间距 ≥6 mm。胶料硬度公差常规为标称 ±5，<strong>单点读数不能作为判退依据</strong>；2 mm 级薄截面件直接上邵氏 A 读数偏高 5~10 度，只可作过程筛查。</p>
+<h2>六、来料验收的六步固定动作</h2>
+<p>把上面的内容压成一张可执行的清单，可直接贴到检验台上：</p>
+<ol>
+<li><strong>先看外观，后量尺寸。</strong> 裂纹、缺料、硬质夹杂一旦发现直接判退，不必再花时间量。</li>
+<li><strong>看包装与标识。</strong> 规格标识应含<strong>内径 d1、截面 d2、系列代号（G 或 A）、等级代号（N 或 S）</strong>。标识不全先挂起，不要先入库。</li>
+<li><strong>在 23±2℃ 环境下调节后测量。</strong> 低温件与热机拆下的旧件必须先回温。</li>
+<li><strong>截面用非接触法或锥规定位后测，多点取中位数。</strong> 不用卡尺读数直接判退；有争议改用切片投影，在双方约定的同一方法下复测。</li>
+<li><strong>按 GB/T 2828.1 抽样判定，AQL 按缺陷分档取值。</strong> 截面与内径走主要缺陷的 AQL；高压动密封件再补做压缩率窗口核算。</li>
+<li><strong>高要求场合加做压缩永久变形。</strong> 依据 GB/T 7759.1-2015（等同 ISO 815-1），常用条件为 25% 压缩率下 70℃×22h 或 100℃×70h，需在采购规格里写明条件与上限。</li>
+</ol>
+<h2>七、采购规格书要写的四行</h2>
+<p>争议的根子几乎都在采购单上。以下四行写全，验收时就不会各说各话：</p>
+<pre><code>1. 尺寸：内径 d1 × 截面 d2，依 GB/T 3452.1-2005 G 系列，注明公差
+2. 外观：依 GB/T 3452.2-2007，等级 N（S / CS 按需）
+3. 材质与硬度：牌号 + 硬度值及公差（如 FKM 70 ±5 Shore A）
+4. 验收方法：量具（锥规 / 投影仪）、抽样标准（GB/T 2828.1，检验水平 II，AQL 分档）、
+   检测环境（23±2℃）、争议复测方法
+</code></pre>
+<p>其中第 4 行最常被省略，也最容易出问题。<strong>只写"符合国标"等于什么都没写</strong>：国标给了公差带，却没规定用卡尺还是投影仪、抽 5 件还是 50 件、争议听谁的。</p>
+<p>选材质与温度、介质是否匹配，用<a href="/tool/">材质推荐</a>过一遍；要打样、打小批或需要供方确认验收方案，走<a href="/contact/">询单页</a>，把规格、材质、硬度、数量连同上述四项验收要求一次给全，比来回确认省事。</p>
+      <div class="cta">
+        <h3>需要按你的实际工况定材质或规格？</h3>
+        <p>用工具输入温度与介质，可以直接看到推荐材质与被排除材质的原因；也可以把工况发给我们做一对一的选型确认。</p>
+        <a class="btn solid" href="/tool/" style="margin-right:10px">打开选型工具</a>
+        <a class="btn solid" href="/contact/">提交工况咨询</a>
+      </div>
+      <div class="rel"><h3>相关阅读</h3><ul><li><a href="/articles/o-ring-size-notation/">O 型圈规格怎么看：内径×截面、公差与 GB/T 3452.1 的表示法</a></li><li><a href="/articles/o-ring-material-selection/">O 型圈材质选型速查表：按温度和介质三步定材质</a></li><li><a href="/articles/o-ring-compression-groove-design/">O 型圈压缩率怎么取：静密封、往复动密封与旋转密封的沟槽设计要点</a></li><li><a href="/articles/o-ring-standards-comparison/">O 型圈标准对照：GB/T 3452.1、ISO 3601、JIS B 2401 与 AS568 能不能互换</a></li></ul></div>
+    </div>
+  </div>
+</article>
+
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>密封件.cn</h4>
+        <p>O 型密封圈规格查询与选型参考站。规格数据依据 GB/T 3452.1-2005（等同采用 ISO 3601-1），材质结论来自工程实践归纳，供设计选型与采购比对使用。</p>
+      </div>
+      <div>
+        <h4>工具与资料</h4>
+        <ul>
+          <li><a href="/tool/">O型圈规格查询工具</a></li>
+          <li><a href="/materials/">材质百科</a></li>
+          <li><a href="/articles/">技术文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>服务</h4>
+        <ul>
+          <li><a href="/contact/">选型咨询与报价</a></li>
+          <li><a href="/about/">关于本站</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      © 2026 密封件.cn　本站数据仅供参考，正式定型请以厂家实测报告及标准原文为准。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
