@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>真空系统 O 型圈：放气率与渗透率决定能抽多低 - 密封件.cn</title>
+<meta name="description" content="真空密封压差只有 0.1 MPa，敌人是气体负荷。本文拆开真漏、虚拟漏、放气与渗透四条路径，给出 ASTM E595 判据、材质阶梯，以及弹性体卡在 10⁻⁸ mbar 的原因。">
+<meta name="keywords" content="真空O型圈,真空密封圈,低放气率橡胶,橡胶渗透率,超高真空密封">
+<link rel="canonical" href="https://xn--5nq252acf.cn/articles/vacuum-o-ring-guide/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="真空系统 O 型圈：放气率与渗透率决定能抽多低 - 密封件.cn">
+<meta property="og:description" content="真空密封压差只有 0.1 MPa，敌人是气体负荷。本文拆开真漏、虚拟漏、放气与渗透四条路径，给出 ASTM E595 判据、材质阶梯，以及弹性体卡在 10⁻⁸ mbar 的原因。">
+<meta property="og:url" content="https://xn--5nq252acf.cn/articles/vacuum-o-ring-guide/">
+<meta property="og:site_name" content="密封件.cn">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "真空系统 O 型圈：放气率与渗透率决定能抽多低",
+ "description": "真空密封压差只有 0.1 MPa，敌人是气体负荷。本文拆开真漏、虚拟漏、放气与渗透四条路径，给出 ASTM E595 判据、材质阶梯，以及弹性体卡在 10⁻⁸ mbar 的原因。",
+ "datePublished": "2026-10-10",
+ "dateModified": "2026-10-10",
+ "inLanguage": "zh-CN",
+ "author": {
+  "@type": "Organization",
+  "name": "密封件.cn"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "密封件.cn"
+ },
+ "mainEntityOfPage": "https://xn--5nq252acf.cn/articles/vacuum-o-ring-guide/"
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="/">密封件<span>.cn</span></a>
+    <nav class="topnav">
+      <a href="/">首页</a>
+      <a href="/tool/">规格查询</a>
+      <a href="/materials/">材质百科</a>
+      <a href="/articles/">技术文章</a>
+      <a href="/faq/">常见问题</a>
+      <a href="/contact/">选型咨询</a>
+    </nav>
+  </div>
+</header>
+
+
+<article class="article" style="margin:26px 0">
+  <div class="wrap" style="padding:0">
+    <div class="crumb" style="max-width:820px;margin:0 auto 14px"><a href="/">首页</a> / <a href="/articles/">技术文章</a> / 正文</div>
+    <div style="max-width:820px;margin:0 auto">
+      <h1>真空系统 O 型圈：放气率与渗透率决定能抽多低</h1>
+      <div class="meta">2026-10-10　·　技术文章</div>
+      <p>一台真空腔体装好，泵开着，压力从大气压往下掉，降到某个数就卡住不动了。拿氦检漏仪把法兰喷一圈，哪都不响；拆开看 O 型圈，平平整整，毫无损伤。</p>
+<p>这正是真空密封与压力密封最大的区别：<strong>压差只有 0.1 MPa</strong>，液压系统天天担心的挤出、吹出、切边在这里几乎不存在；它面对的是另一套敌人——<strong>气体负荷</strong>。常压下材料慢慢往外吐的挥发物没人看得见，在真空里它们全留在腔体里把压力顶住。失效判据从「漏不漏」变成了「放不放气、透不透气、还回不回弹」。</p>
+<h2>一、先把四个来源分开</h2>
+<p>「真空抽不下去」的排查，多数卡在第一步：把四种来源当成了一种。</p>
+<table>
+<thead>
+<tr>
+<th>来源</th>
+<th>是什么</th>
+<th>典型现象</th>
+<th>怎么治</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>真实漏</td>
+<td>壳体或密封面上一条物理通道</td>
+<td>压力持续上升、不随时间衰减；氦喷到哪就响到哪</td>
+<td>检漏、换圈、重做焊缝</td>
+</tr>
+<tr>
+<td>虚拟漏</td>
+<td>盲孔、螺纹、双层焊之间的封闭气团</td>
+<td>关阀后压力先升后缓慢回落，氦检找不到</td>
+<td>打通死体积（排气槽、带孔螺钉）</td>
+</tr>
+<tr>
+<td>放气</td>
+<td>材料内部残留挥发物（以水汽为主）在真空下释放</td>
+<td>抽气初期快、之后越来越慢，始终压不到底</td>
+<td>真空烘烤 + 后固化真空级材料</td>
+</tr>
+<tr>
+<td>渗透</td>
+<td>大气中的气体（水汽、氦）穿过橡胶本体进入腔体</td>
+<td>存在一个始终跨不过去的压力地板</td>
+<td>换低渗透材质或金属密封</td>
+</tr>
+</tbody>
+</table>
+<p>四者互不通用：氦检漏仪能找真实漏，找不着虚拟漏，更测不出放气与渗透；真空脂盖得住划痕，自己却是放气源。<strong>先分清哪一类，再动手。</strong></p>
+<h2>二、真空分档，弹性体停在哪一档</h2>
+<p>真空不是一个值，是一段量程，不同量程用的法兰和密封形式完全不同。</p>
+<table>
+<thead>
+<tr>
+<th>真空区域</th>
+<th>压力范围</th>
+<th>常用法兰</th>
+<th>密封形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>粗真空</td>
+<td>10⁵ ~ 10³ Pa</td>
+<td>KF / ISO</td>
+<td>弹性体 O 型圈</td>
+</tr>
+<tr>
+<td>低真空</td>
+<td>10³ ~ 10⁻¹ Pa</td>
+<td>KF / ISO</td>
+<td>弹性体 O 型圈</td>
+</tr>
+<tr>
+<td>高真空</td>
+<td>10⁻¹ ~ 10⁻⁶ Pa</td>
+<td>ISO-K / CF</td>
+<td>FKM 为主，越往下越吃紧</td>
+</tr>
+<tr>
+<td>超高真空</td>
+<td>10⁻⁶ ~ 10⁻¹⁰ Pa</td>
+<td>CF</td>
+<td>全金属（无氧铜垫）</td>
+</tr>
+</tbody>
+</table>
+<p>结论只有一句：<strong>弹性体 O 型圈的实用下限大致在 10⁻⁷ ~ 10⁻⁸ mbar 量级。</strong> 这不是密封面漏，是放气与渗透设的物理地板；再往下、或需 150℃ 以上烘烤，只能换全金属 CF 法兰——不锈钢刃口咬进无氧铜垫，压一次成型、不可复用，但能烤到 450℃、无渗透，可稳定到 10⁻¹² mbar。<strong>弹性体与金属之间没有折中方案。</strong></p>
+<h2>三、放气：判据是 ASTM E595 的两个数</h2>
+<p>放气率不是模糊印象，它有标准测法：<strong>ASTM E595</strong>。取 100~300 mg 试样，先 25℃、50% RH 预置 24 小时，再在 125℃、真空（低于 7×10⁻³ Pa）下放 24 小时，用 25℃ 收集板接住挥发物，称重得到两个数：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>含义</th>
+<th>航天级门槛</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TML 总质量损失</td>
+<td>试样在测试中总共掉了多少质量</td>
+<td>≤ 1.0%</td>
+</tr>
+<tr>
+<td>CVCM 可凝挥发物</td>
+<td>掉出来的东西里有多少会冷凝在冷面上</td>
+<td>≤ 0.10%</td>
+</tr>
+</tbody>
+</table>
+<p>这两个门槛来自航天筛选口径，在真空行业被普遍借用。真正要紧的是 <strong>CVCM 而不是 TML</strong>：决定污染的是会不会冷凝在冷面上，而不是掉了多少。</p>
+<p>放气是可以「烘」掉的：同一来源口径下，150℃ 烘烤 4 小时 + 抽气 12 小时，放气率可降约 2500 倍。<strong>所以真空级件与普通件的差别常在配方之外</strong>——去掉挥发性增塑剂、用过氧化物硫化、再做二次硫化（post-cure），把残留挥发物在出厂前赶掉。</p>
+<p>一个容易忽略的陷阱：<strong>烘烤过的圈一旦拆包暴露在空气里，会重新吸满水汽，放气率基本回到原点。</strong> 所以真空级件要真空袋包装、临装才拆，安装戴手套——裸手触摸留下的皮脂会在真空里放气很久。</p>
+<h2>四、渗透：低放气不等于低渗透</h2>
+<p>最容易被供应商一句话带偏的地方：「我们这款放气率很低」——放气低不代表渗透低，<strong>这是两条独立路径</strong>。橡胶厂以 NBR 为基准公开的相对渗透率大致是：</p>
+<table>
+<thead>
+<tr>
+<th>材质</th>
+<th>相对渗透率（NBR = 1）</th>
+<th>在真空里的意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>丁基橡胶 IIR</td>
+<td>约 0.05</td>
+<td>全橡胶里最低，超高真空的经典选择；但不耐矿物油、耐温不高</td>
+</tr>
+<tr>
+<td>FKM 氟橡胶</td>
+<td>约 0.3</td>
+<td>高真空主力</td>
+</tr>
+<tr>
+<td>HNBR</td>
+<td>约 0.5</td>
+<td>优于 NBR</td>
+</tr>
+<tr>
+<td>NBR</td>
+<td>1（基准）</td>
+<td>只够粗、中真空</td>
+</tr>
+<tr>
+<td>硅橡胶 VMQ</td>
+<td>约 10</td>
+<td>高一个数量级，真空腔体里应回避</td>
+</tr>
+</tbody>
+</table>
+<p><strong>硅橡胶最值得单独讲。</strong> 它耐 -60~200℃、放气率可通过配方与后固化做得很低，但主链极柔顺、气体分子极易穿过，渗透率是常用橡胶里最高的之一。<strong>低放气救不了高渗透</strong>：需要长期保压的腔体里，硅橡胶会形成一块始终抽不下去的压力地板——这就是同样耐温 200℃ 级、真空系统默认给 FKM 而不给硅胶的原因。</p>
+<p>渗透还有两个连带后果。一是<strong>它会让氦检漏仪骗人</strong>：氦气穿过一只普通 FKM 圈只要约 20 分钟，检漏时本底持续缓慢上升——所以<strong>不要在烘烤过程中做氦检漏</strong>，也不要把渗透本底当成真实漏率。二是<strong>渗透不分方向</strong>：车间空气里的水汽会不断渗进来，这让拆装过的腔体压力总要很久才回得去。</p>
+<h2>五、压缩永久变形：真空密封真正的机械失效</h2>
+<p>压差只有 0.1 MPa，<strong>挤出、吹出、挡圈这些高压工况的核心议题在真空里基本不存在</strong>，但机械失效换了个方向：<strong>圈被长期压着，回不来了。</strong></p>
+<p>真空密封的接触应力完全靠橡胶自身回弹维持。压缩永久变形一旦超标，圈填不满沟槽截面，大气侧气体就沿接触面进来。典型症状都不是「漏」，而是：<strong>抽不到底压、关阀后压力缓慢回升、泵降时间越来越长。</strong></p>
+<p><strong>压缩永久变形 10%~25% 算良好，超过 40% 基本可以判死刑</strong>，但必须在规定条件下测，条件随材质变：</p>
+<table>
+<thead>
+<tr>
+<th>材质</th>
+<th>常用压缩永久变形测试条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NBR</td>
+<td>22 h / 100℃</td>
+</tr>
+<tr>
+<td>EPDM</td>
+<td>22 h / 125℃（过氧化物硫化可到 150℃）</td>
+</tr>
+<tr>
+<td>硅橡胶 VMQ</td>
+<td>22 h / 175℃</td>
+</tr>
+<tr>
+<td>FKM</td>
+<td>22 h / 200℃</td>
+</tr>
+<tr>
+<td>FFKM</td>
+<td>70 h / 200℃</td>
+</tr>
+</tbody>
+</table>
+<p>条件不同，<strong>不同材质的压变数值不能直接横比</strong>：看到「压变 15%」，先看清测试的温度与时长。</p>
+<p>真空里还有两个加速因素。<strong>一是没有对流散热</strong>，密封位置实际温度往往高于按腔体温度估算的值。<strong>二是烘烤温度被密封件卡住</strong>：不锈钢壁有效除水通常要 250℃ 以上，而 FKM 连续使用上限就在 200℃ 左右——烘不上去，水就赶不干净。这是弹性体上不去超高真空的第二个原因。</p>
+<h2>六、材质阶梯与真空件的采购口径</h2>
+<table>
+<thead>
+<tr>
+<th>材质</th>
+<th>适用真空档</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NBR</td>
+<td>粗 / 中真空</td>
+<td>成本低；含增塑剂、放气偏高，不宜长期高真空</td>
+</tr>
+<tr>
+<td>HNBR</td>
+<td>中 / 高真空</td>
+<td>渗透约为 NBR 一半，耐温 150℃</td>
+</tr>
+<tr>
+<td>EPDM</td>
+<td>中 / 高真空（无油）</td>
+<td>干泵、水汽环境可用；遇矿物油即废，有油旋片泵不行</td>
+</tr>
+<tr>
+<td>FKM</td>
+<td>高真空主力</td>
+<td>渗透约 NBR 三成，工具口径 -20~200℃；真空级需后固化</td>
+</tr>
+<tr>
+<td>FFKM</td>
+<td>超高真空 / 高温 / 腐蚀</td>
+<td>工具口径 -20~300℃，放气与压变最低，价格是另一个量级</td>
+</tr>
+<tr>
+<td>丁基橡胶 IIR（站外）</td>
+<td>超高真空</td>
+<td>渗透最低；但不耐矿物油、耐温不高</td>
+</tr>
+<tr>
+<td>PTFE 弹簧蓄能圈</td>
+<td>超高真空</td>
+<td>放气近零；无弹性，靠弹簧提供压紧力</td>
+</tr>
+<tr>
+<td>硅橡胶 VMQ</td>
+<td>不建议</td>
+<td>渗透过高，且不耐矿物油；除非有实测验证</td>
+</tr>
+</tbody>
+</table>
+<p>真空件的采购口径比普通件多几项，漏一项就白花钱：</p>
+<table>
+<thead>
+<tr>
+<th>要写清的项</th>
+<th>为什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>真空档位与目标底压</td>
+<td>决定选弹性体还是全金属密封，定错后面全错</td>
+</tr>
+<tr>
+<td>是否要求真空级 / 后固化</td>
+<td>同一牌号，普通件与真空级件放气可能差一个数量级</td>
+</tr>
+<tr>
+<td>放气数据与来源</td>
+<td>索要 ASTM E595 的 TML / CVCM 实测值，写明测试条件</td>
+</tr>
+<tr>
+<td>压缩永久变形条件</td>
+<td>写明温度与时长，避免把不同条件的数据拿来比较</td>
+</tr>
+</tbody>
+</table>
+<h2>七、判断顺序：三步走</h2>
+<p><strong>第一步，先定压力档和烘烤温度，而不是先定材质。</strong> 要稳到 10⁻⁸ mbar 以下、或要烤到 150℃ 以上，直接上全金属 CF，别在橡胶里找答案。</p>
+<p><strong>第二步，算气体负荷，分清以放气还是渗透为主。</strong> 抽气初期压不下去、越抽越慢，多半是放气，靠烘烤与后固化解决；始终跨不过去的压力地板，多半是渗透，只能换材质。</p>
+<p><strong>第三步，才在材质里挑。</strong> 腔体默认从 FKM 起跳，高温或腐蚀上 FFKM，无油干泵与湿气环境可用 EPDM，硅橡胶除非有实测数据否则回避。</p>
+<p>两条现场习惯值得固定：<strong>静态弹性体密封不需要涂真空脂</strong>——真空脂本身是放气源，还会困住气团形成压力脉冲，抹脂只是补救压缩量偏小或划痕的维修动作；<strong>每个封闭死体积都要打通</strong>，盲孔用带排气孔的螺钉、密封槽开排气槽，虚拟漏根本不在密封圈上。</p>
+<p>本站的 <a href="/tool/">O 型圈选型工具</a> 按化学相容性排列介质，<strong>真空不在它的介质清单里</strong>——真空不是化学品，它的攻击方式是放气与渗透，不是腐蚀。可以这样借它的口径：介质选「空气 / 压缩空气」（该档说明本就包含真空场合），<strong>温度填烘烤温度而不是室温</strong>；同时记住这一档的分岔不在相容性表，而在放气率、渗透率与压缩永久变形。要按真空档位和烘烤条件定材质的，把目标底压、烘烤温度、密封位置与是否有油发到 <a href="/contact/">询单页</a>。</p>
+      <div class="cta">
+        <h3>需要按你的实际工况定材质或规格？</h3>
+        <p>用工具输入温度与介质，可以直接看到推荐材质与被排除材质的原因；也可以把工况发给我们做一对一的选型确认。</p>
+        <a class="btn solid" href="/tool/" style="margin-right:10px">打开选型工具</a>
+        <a class="btn solid" href="/contact/">提交工况咨询</a>
+      </div>
+      <div class="rel"><h3>相关阅读</h3><ul><li><a href="/articles/o-ring-size-notation/">O 型圈规格怎么看：内径×截面、公差与 GB/T 3452.1 的表示法</a></li><li><a href="/articles/o-ring-material-selection/">O 型圈材质选型速查表：按温度和介质三步定材质</a></li><li><a href="/articles/o-ring-compression-groove-design/">O 型圈压缩率怎么取：静密封、往复动密封与旋转密封的沟槽设计要点</a></li><li><a href="/articles/o-ring-standards-comparison/">O 型圈标准对照：GB/T 3452.1、ISO 3601、JIS B 2401 与 AS568 能不能互换</a></li></ul></div>
+    </div>
+  </div>
+</article>
+
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>密封件.cn</h4>
+        <p>O 型密封圈规格查询与选型参考站。规格数据依据 GB/T 3452.1-2005（等同采用 ISO 3601-1），材质结论来自工程实践归纳，供设计选型与采购比对使用。</p>
+      </div>
+      <div>
+        <h4>工具与资料</h4>
+        <ul>
+          <li><a href="/tool/">O型圈规格查询工具</a></li>
+          <li><a href="/materials/">材质百科</a></li>
+          <li><a href="/articles/">技术文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>服务</h4>
+        <ul>
+          <li><a href="/contact/">选型咨询与报价</a></li>
+          <li><a href="/about/">关于本站</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      © 2026 密封件.cn　本站数据仅供参考，正式定型请以厂家实测报告及标准原文为准。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
