@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O 型圈泄漏排查：从现象倒推根因的清单 - 密封件.cn</title>
+<meta name="description" content="O 型圈一漏就换、换了还漏？本文给一张站在机器前的排查清单：先看漏在哪、何时漏，再查配合面划痕、沟槽压缩率与装配损伤——多数重复泄漏其实和圈本身无关。">
+<meta name="keywords" content="O型圈泄漏排查,O型圈漏油原因,密封圈泄漏怎么办,O型圈安装损伤,密封沟槽压缩率">
+<link rel="canonical" href="https://xn--5nq252acf.cn/articles/o-ring-leak-troubleshooting/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="O 型圈泄漏排查：从现象倒推根因的清单 - 密封件.cn">
+<meta property="og:description" content="O 型圈一漏就换、换了还漏？本文给一张站在机器前的排查清单：先看漏在哪、何时漏，再查配合面划痕、沟槽压缩率与装配损伤——多数重复泄漏其实和圈本身无关。">
+<meta property="og:url" content="https://xn--5nq252acf.cn/articles/o-ring-leak-troubleshooting/">
+<meta property="og:site_name" content="密封件.cn">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "O 型圈泄漏排查：从现象倒推根因的清单",
+ "description": "O 型圈一漏就换、换了还漏？本文给一张站在机器前的排查清单：先看漏在哪、何时漏，再查配合面划痕、沟槽压缩率与装配损伤——多数重复泄漏其实和圈本身无关。",
+ "datePublished": "2026-10-13",
+ "dateModified": "2026-10-13",
+ "inLanguage": "zh-CN",
+ "author": {
+  "@type": "Organization",
+  "name": "密封件.cn"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "密封件.cn"
+ },
+ "mainEntityOfPage": "https://xn--5nq252acf.cn/articles/o-ring-leak-troubleshooting/"
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="/">密封件<span>.cn</span></a>
+    <nav class="topnav">
+      <a href="/">首页</a>
+      <a href="/tool/">规格查询</a>
+      <a href="/materials/">材质百科</a>
+      <a href="/articles/">技术文章</a>
+      <a href="/faq/">常见问题</a>
+      <a href="/contact/">选型咨询</a>
+    </nav>
+  </div>
+</header>
+
+
+<article class="article" style="margin:26px 0">
+  <div class="wrap" style="padding:0">
+    <div class="crumb" style="max-width:820px;margin:0 auto 14px"><a href="/">首页</a> / <a href="/articles/">技术文章</a> / 正文</div>
+    <div style="max-width:820px;margin:0 auto">
+      <h1>O 型圈泄漏排查：从现象倒推根因的清单</h1>
+      <div class="meta">2026-10-13　·　技术文章</div>
+      <p>一台设备 O 型圈漏了，老师傅的第一反应往往是"圈不行，换个新的"。可现场反复出现另一种剧本：新圈装上去，开机还是漏，于是再换材质、加硬度、上挡圈，钱花了问题还在。根子常常不在圈，而在漏点两侧的装配与沟槽。</p>
+<p>本文给一张站在机器前就能用的排查清单：先把"漏在哪、什么时候漏"这两件事问清楚，再去量沟槽、看配合面、查装配。经验上，相当比例的重复泄漏（尤其新装即漏、换了还漏）与圈本身的材质无关，而是压缩率没到位、间隙没控住，或者装配时留下了伤。</p>
+<h2>一、先问两件事，圈都不用拆</h2>
+<p>泄漏的"位置"和"时机"几乎已经把根因范围缩到了一半：</p>
+<ul>
+<li><strong>漏在哪一侧</strong>：静密封面（法兰、端盖、管接头）还是动密封（活塞杆、旋转轴）？动密封漏，八成往运动侧、间隙侧找。</li>
+<li><strong>什么时候漏</strong>：一加压就漏、升压到某值才漏、运转一段时间才漏、只有冷/热态漏、还是停机泄压后才漏？每种时机对应的毛病完全不同（见下表）。</li>
+</ul>
+<p>把这两个问题答上，再去拆设备，能少走很多弯路。现场建议把答案顺手记在手机里——后面发给供应商或写维修单时，这两条信息比一张旧圈的照片更有用。</p>
+<h2>二、按泄漏时机定位根因</h2>
+<table>
+<thead>
+<tr>
+<th>泄漏时机</th>
+<th>最可能根因</th>
+<th>先查什么</th>
+<th>方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>装好一加压就漏</td>
+<td>尺寸错（内径/线径不对）、压缩率不足、沟槽尺寸错</td>
+<td>量内径线径、算压缩率</td>
+<td>改尺寸 / 沟槽</td>
+</tr>
+<tr>
+<td>升压到某值后才漏</td>
+<td>挤出 / 间隙咬伤：间隙过大、硬度偏低、缺挡圈</td>
+<td>测配合间隙、看圈低压侧有无"啃边"</td>
+<td>加挡圈 / 提硬度</td>
+</tr>
+<tr>
+<td>运转一阵越漏越大</td>
+<td>磨损、螺旋扭转、压缩永久变形</td>
+<td>看动密封面粗糙度、圈是否扭成麻花</td>
+<td>改润滑 / 降压缩</td>
+</tr>
+<tr>
+<td>仅冷态或热态漏</td>
+<td>材质温度边界、低温失弹</td>
+<td>核对最低 / 最高工作温度</td>
+<td>换材质</td>
+</tr>
+<tr>
+<td>停机 / 泄压后才漏</td>
+<td>压缩永久变形（压扁回不来）、介质溶胀</td>
+<td>拆下看截面是否变矩形</td>
+<td>换低压缩集材质</td>
+</tr>
+<tr>
+<td>新圈装上去就漏</td>
+<td>安装损伤：切边、划伤、扭曲</td>
+<td>看圈表面有无切口、螺旋痕</td>
+<td>改装配工艺</td>
+</tr>
+</tbody>
+</table>
+<p>这张表讲的是"现象 → 方向"。至于拆下旧圈后怎么从尸体（溶胀、裂纹、挤出、压扁）反推，我们另有《O 型圈失效模式图鉴》专门讲，本文聚焦拆之前能在系统上做的检查。</p>
+<h2>三、配合面：被忽略的头号漏点</h2>
+<p>沟槽尺寸和圈都对，却还漏——现场经验里，最常见的原因是<strong>密封配合面上有连续泄漏通道</strong>：一道轴向划痕、一条车削刀纹、一个没去毛刺的棱边，都能让圈"贴不住"。橡胶靠的是"压扁贴住"而非"堵死"，一旦配合面有一道贯穿密封带的沟，圈就被这条沟架住，两侧始终连通；有时把配合面重新精加工一遍，比换十种材质的圈都管用。</p>
+<ul>
+<li>静密封配合面粗糙度建议 <strong>Ra ≤ 1.6 μm</strong>；动密封滑动面（活塞杆、旋转轴）要 <strong>Ra ≤ 0.4 μm</strong>。</li>
+<li>装配前先用手指沿密封带摸一遍，有刮手感的纹路就用显微镜或换件确认。</li>
+<li>沟槽底面和侧面反而不要追求镜面，<strong>Ra 1.6~3.2 μm</strong> 刚好能存一点油膜，太光了装配时反而易扭。</li>
+</ul>
+<p>记住一条：表面粗糙度补偿不了一个缺了的导入倒角。</p>
+<h2>四、沟槽三参数：压缩率、间隙、填充率</h2>
+<p>多数"换了还漏"是沟槽没量准。三个数要一起看：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>静密封</th>
+<th>动密封</th>
+<th>失控后果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>压缩率</td>
+<td>平面 15~30%，径向 10~15%</td>
+<td>10~15%（旋转不优先用 O 型圈，改用油封）</td>
+<td>太小漏、太大压死 / 挤出</td>
+</tr>
+<tr>
+<td>配合间隙（70A）</td>
+<td>≤7 MPa：≤0.13 mm</td>
+<td>7~14 MPa：≤0.08 mm；&gt;14 MPa 加挡圈</td>
+<td>间隙过大 → 挤出啃边</td>
+</tr>
+<tr>
+<td>拉伸量</td>
+<td>安装后 1~5%，绝不超过 5%</td>
+<td>同左</td>
+<td>超 5% 截面变细、实际压缩率下降</td>
+</tr>
+</tbody>
+</table>
+<p>配合间隙随压力和硬度变，给出一组典型参考（径向间隙，具体以供应商曲线为准）：</p>
+<table>
+<thead>
+<tr>
+<th>系统压力</th>
+<th>70 Shore A 允许间隙</th>
+<th>90 Shore A 允许间隙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤ 7 MPa</td>
+<td>≤ 0.13 mm</td>
+<td>≤ 0.25 mm</td>
+</tr>
+<tr>
+<td>7 ~ 14 MPa</td>
+<td>≤ 0.08 mm</td>
+<td>≤ 0.18 mm</td>
+</tr>
+<tr>
+<td>14 ~ 35 MPa</td>
+<td>加挡圈</td>
+<td>≤ 0.08 mm（建议加挡圈）</td>
+</tr>
+<tr>
+<td>&gt; 35 MPa</td>
+<td>90A + 双挡圈 + 极小间隙</td>
+<td>同左</td>
+</tr>
+</tbody>
+</table>
+<p>几个易踩的点：</p>
+<ul>
+<li><strong>压缩率不是越大越好</strong>。静密封平面 15~30% 是通用区间；动密封取 10~15% 是为压住摩擦和发热。把 20% 一刀切套到旋转轴上，轻则过热、重则烧圈。</li>
+<li><strong>间隙随压力和硬度变</strong>。70A 在 14 MPa 以上就建议加挡圈；上 90A 能把允许间隙放宽到约 0.18 mm（14 MPa 内），但 90A 弹性差、低压反而贴不严，别无脑加硬。</li>
+<li><strong>拉伸超 5% 是隐形漏因</strong>：内径量错、选大了一号，装上去被拉细，压缩率偷偷降下来，一升压就漏。</li>
+</ul>
+<p>另外沟槽<strong>填充率</strong>也要看：圈装入后截面填充沟槽的面积一般控制在 75% 左右、最高不超过 85%，给热膨胀和介质溶胀留出余量；槽太窄把圈挤满，升温后反而会剪切伤圈。</p>
+<p>站在沟槽前，用站内 <a href="/tool/">/tool/</a> 按内径、线径反查标准压缩率与推荐槽深，比凭经验估快得多。</p>
+<h2>五、装配：新圈漏，多半卡在这</h2>
+<p>新圈一装就漏，几乎都是装配伤。四类典型：</p>
+<ol>
+<li><strong>切边 / 划伤</strong>：零件没有 15~20° 导入倒角，或倒角带毛刺，圈滑过时被刃口切出肉眼难辨的微裂纹，受压后裂成漏路。所有棱边去毛刺、加倒角。</li>
+<li><strong>扭曲（麻花）</strong>：动密封装配时圈在槽里拧着，运转后形成约 45° 的螺旋切口。膏状润滑、控制拉伸、避免强行套入能避免。</li>
+<li><strong>干装</strong>：不涂与介质相容的润滑脂，摩擦大、易扭易伤。装配面薄涂一层相容润滑脂。</li>
+<li><strong>跨螺纹 / 花键硬拽</strong>：圈被螺纹牙啃破。过螺纹必须扩隙或用专用导入套。</li>
+</ol>
+<p>这四类伤的共同点是：肉眼初看圈是"新的、没破"，但微裂纹在升压瞬间扩展，于是表现为"新圈也漏"。</p>
+<h2>六、什么时候该换材质，而不是改装配</h2>
+<p>前面五步都查过、装配也没问题，还是漏，才轮到怀疑材质：</p>
+<ul>
+<li><strong>仅冷态漏</strong>：低温失弹，往 HNBR（-40℃ 起）、硅 / 氟硅方向看。</li>
+<li><strong>仅热态或介质接触后漏</strong>：核对材质耐温与耐介质边界（参考站内材质速查）。</li>
+<li><strong>高压挤出反复发生</strong>：提硬度 + 挡圈，或换抗挤出更好的结构（如加挡圈的填充聚四氟乙烯）。</li>
+<li><strong>气体介质快速泄压后起泡 / 裂</strong>：这是爆炸性减压（ED），要选 ED 抗性材质。</li>
+</ul>
+<p>还有一种容易误判的情况：设备从来没漏过，某次维修后才开始漏——多半是维修时换的圈规格或硬度跟原件不一致，等于悄悄改了压缩率。要拿原件参数比对，而不是盲目加硬。</p>
+<h2>七、给你的现场排查顺序</h2>
+<ol>
+<li><strong>定位</strong>：漏在哪侧、什么时机漏，记下来。</li>
+<li><strong>看配合面</strong>：摸一遍密封带，找划痕 / 刀纹 / 毛刺。</li>
+<li><strong>量沟槽</strong>：槽深 → 压缩率，槽宽 → 填充率，间隙 → 挤出风险。</li>
+<li><strong>查装配</strong>：倒角、润滑、有无切边 / 扭曲、拉伸是否超 5%。</li>
+<li><strong>最后看圈</strong>：拆下按失效模式图鉴判断，确认是材质还是装配。</li>
+</ol>
+<p>把机型、部位、介质、温度、压力、泄漏时机一起整理好，发到 <a href="/contact/">/contact/</a>，比只寄一个旧圈过去更能一次定位。</p>
+      <div class="cta">
+        <h3>需要按你的实际工况定材质或规格？</h3>
+        <p>用工具输入温度与介质，可以直接看到推荐材质与被排除材质的原因；也可以把工况发给我们做一对一的选型确认。</p>
+        <a class="btn solid" href="/tool/" style="margin-right:10px">打开选型工具</a>
+        <a class="btn solid" href="/contact/">提交工况咨询</a>
+      </div>
+      <div class="rel"><h3>相关阅读</h3><ul><li><a href="/articles/o-ring-size-notation/">O 型圈规格怎么看：内径×截面、公差与 GB/T 3452.1 的表示法</a></li><li><a href="/articles/o-ring-material-selection/">O 型圈材质选型速查表：按温度和介质三步定材质</a></li><li><a href="/articles/o-ring-compression-groove-design/">O 型圈压缩率怎么取：静密封、往复动密封与旋转密封的沟槽设计要点</a></li><li><a href="/articles/o-ring-standards-comparison/">O 型圈标准对照：GB/T 3452.1、ISO 3601、JIS B 2401 与 AS568 能不能互换</a></li></ul></div>
+    </div>
+  </div>
+</article>
+
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>密封件.cn</h4>
+        <p>O 型密封圈规格查询与选型参考站。规格数据依据 GB/T 3452.1-2005（等同采用 ISO 3601-1），材质结论来自工程实践归纳，供设计选型与采购比对使用。</p>
+      </div>
+      <div>
+        <h4>工具与资料</h4>
+        <ul>
+          <li><a href="/tool/">O型圈规格查询工具</a></li>
+          <li><a href="/materials/">材质百科</a></li>
+          <li><a href="/articles/">技术文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>服务</h4>
+        <ul>
+          <li><a href="/contact/">选型咨询与报价</a></li>
+          <li><a href="/about/">关于本站</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      © 2026 密封件.cn　本站数据仅供参考，正式定型请以厂家实测报告及标准原文为准。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
