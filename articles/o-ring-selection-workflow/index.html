@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O 型圈选型六步法：从工况参数走到可下单型号 - 密封件.cn</title>
+<meta name="description" content="O 型圈选型不是查一张材质表。本文把选型拆成六步：工况参数、密封结构、尺寸链、材质否决、硬度与挡圈、规格书与首件验证，每步给出输出物与常见错误，并附一个液压缸活塞密封的算例。">
+<meta name="keywords" content="O型圈选型,密封圈选型步骤,O型圈选型方法,O型圈规格怎么定,液压缸O型圈选型">
+<link rel="canonical" href="https://xn--5nq252acf.cn/articles/o-ring-selection-workflow/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="O 型圈选型六步法：从工况参数走到可下单型号 - 密封件.cn">
+<meta property="og:description" content="O 型圈选型不是查一张材质表。本文把选型拆成六步：工况参数、密封结构、尺寸链、材质否决、硬度与挡圈、规格书与首件验证，每步给出输出物与常见错误，并附一个液压缸活塞密封的算例。">
+<meta property="og:url" content="https://xn--5nq252acf.cn/articles/o-ring-selection-workflow/">
+<meta property="og:site_name" content="密封件.cn">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "O 型圈选型六步法：从工况参数走到可下单型号",
+ "description": "O 型圈选型不是查一张材质表。本文把选型拆成六步：工况参数、密封结构、尺寸链、材质否决、硬度与挡圈、规格书与首件验证，每步给出输出物与常见错误，并附一个液压缸活塞密封的算例。",
+ "datePublished": "2026-10-19",
+ "dateModified": "2026-10-19",
+ "inLanguage": "zh-CN",
+ "author": {
+  "@type": "Organization",
+  "name": "密封件.cn"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "密封件.cn"
+ },
+ "mainEntityOfPage": "https://xn--5nq252acf.cn/articles/o-ring-selection-workflow/"
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="/">密封件<span>.cn</span></a>
+    <nav class="topnav">
+      <a href="/">首页</a>
+      <a href="/tool/">规格查询</a>
+      <a href="/materials/">材质百科</a>
+      <a href="/articles/">技术文章</a>
+      <a href="/faq/">常见问题</a>
+      <a href="/contact/">选型咨询</a>
+    </nav>
+  </div>
+</header>
+
+
+<article class="article" style="margin:26px 0">
+  <div class="wrap" style="padding:0">
+    <div class="crumb" style="max-width:820px;margin:0 auto 14px"><a href="/">首页</a> / <a href="/articles/">技术文章</a> / 正文</div>
+    <div style="max-width:820px;margin:0 auto">
+      <h1>O 型圈选型六步法：从工况参数走到可下单型号</h1>
+      <div class="meta">2026-10-19　·　技术文章</div>
+      <p>维修班最省事的做法，是拿旧圈去配新圈：量内径、量截面，再按颜色猜材质。这个做法在换件时成立，在选型时却会把上一轮的错误原样复制。某台减速机输入轴端盖渗油，旧圈是黑色 NBR 70A，仓管照着配了一盒同规格装上去，三个月后同一位置又渗。拆下来的圈没有划伤，也没有挤出，只是硬得像塑料——真实工况是油温长期 110℃，而 NBR 的上限约 100℃。<strong>问题不在圈的质量，在于没人把工况写成一张表。</strong></p>
+<p>O 型圈选型是一条从工况收敛到型号的链条，共六步。每一步都要留下可检查的输出物；缺哪一步，后面就会以泄漏的形式补上这一课。</p>
+<h2>一、第一步：把工况写成一张参数表</h2>
+<p>选型的第一步不是翻开规格表，而是把设备问清楚。下面八项参数，问不到确切答案就不要往下走。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>要问到什么程度</th>
+<th>漏掉的后果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>介质</td>
+<td>写全牌号与浓度，如"46# 抗磨液压油"，不能只写"液压油"</td>
+<td>添加剂与极性决定溶胀方向，选错材质直接失效</td>
+</tr>
+<tr>
+<td>温度</td>
+<td>长期工作温度，另记峰值温度与持续时间</td>
+<td>按峰值选材浪费成本，按平均选材缩短寿命</td>
+</tr>
+<tr>
+<td>压力</td>
+<td>工作压力、峰值压力、脉动频率</td>
+<td>峰值决定是否需要挡圈，脉动加速疲劳</td>
+</tr>
+<tr>
+<td>运动</td>
+<td>静止 / 往复 / 旋转，速度、行程、频率</td>
+<td>压缩率与硬度取值完全不同</td>
+</tr>
+<tr>
+<td>部位</td>
+<td>端面还是径向，内压还是外压，单向还是双向</td>
+<td>决定挡圈数量与沟槽型式</td>
+</tr>
+<tr>
+<td>配合件</td>
+<td>材料、镀层、硬度、表面粗糙度</td>
+<td>铝件与不锈钢的挤出风险和磨损量不同</td>
+</tr>
+<tr>
+<td>环境</td>
+<td>臭氧、紫外、清洗剂、真空、辐射</td>
+<td>户外 NBR 会在几个月内龟裂</td>
+</tr>
+<tr>
+<td>装配</td>
+<td>是否可拆、停机窗口、润滑方式</td>
+<td>决定能否采用过盈安装</td>
+</tr>
+</tbody>
+</table>
+<p>还有三项最常被漏掉：介质清洁度、压力是否双向作用、设备允许的泄漏量。前两项决定磨损速率与挡圈布置，第三项决定目标是"零泄漏"还是"可接受渗漏"——两者成本差别很大。</p>
+<h2>二、第二步：先定结构，再谈圈</h2>
+<p>同一个 O 型圈，装在法兰端面和装在活塞上，设计逻辑是两套。结构没定就选圈，等于先买鞋再决定走路还是跑步。</p>
+<table>
+<thead>
+<tr>
+<th>结构</th>
+<th>典型部位</th>
+<th>受压方向</th>
+<th>设计要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>端面静密封</td>
+<td>法兰、端盖、盖板</td>
+<td>轴向压紧</td>
+<td>压缩率取 20%~25%，法兰刚度与螺栓预紧决定成败</td>
+</tr>
+<tr>
+<td>径向静密封</td>
+<td>缸盖、管接头、堵头</td>
+<td>径向，内压把圈压向槽底</td>
+<td>控制安装拉伸，保证沟槽与孔的同轴度</td>
+</tr>
+<tr>
+<td>往复动密封</td>
+<td>活塞、活塞杆</td>
+<td>径向</td>
+<td>压缩率取 12%~18%，配合面需磨削，杆密封要加防尘</td>
+</tr>
+<tr>
+<td>旋转密封</td>
+<td>低速回转轴、旋转接头</td>
+<td>径向</td>
+<td>压缩率取 8%~12%，线速度与散热是硬边界</td>
+</tr>
+</tbody>
+</table>
+<p>这一步的输出物是一张标了压力方向的简图。双作用活塞两侧受压，挡圈装两侧；单作用只需在低压侧装一片。方向标错，槽宽与挡圈数量都会跟着错。</p>
+<h2>三、第三步：尺寸链，O 圈尺寸是算出来的</h2>
+<p>多数人卡在这一步：知道缸径 63 mm，却不知道该配多大的圈。正确顺序是先定截面，由压缩率反算槽深，再由槽底直径和内径算拉伸率。顺序颠倒，先挑内径，就把压缩率锁死了。</p>
+<p>三条校核公式：</p>
+<pre><code>压缩率 W = (d2 − t) / d2 × 100%          d2 为截面直径，t 为槽深
+拉伸率 ε = (d3 − d1) / d1 × 100%          d3 为槽底直径，d1 为圈内径
+填充率   = (π·d2²/4) / (b × t) × 100%     b 为槽宽
+</code></pre>
+<p>以一台 63 mm 缸径、16 MPa 的液压缸活塞为例，按往复动密封取值：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>取值</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缸径 D</td>
+<td>63 mm</td>
+<td>设备参数</td>
+</tr>
+<tr>
+<td>截面 d2</td>
+<td>3.55 mm</td>
+<td>GB/T 3452.1 的 G 系列</td>
+</tr>
+<tr>
+<td>目标压缩率</td>
+<td>15%</td>
+<td>往复动密封窗口 12%~18%</td>
+</tr>
+<tr>
+<td>槽深 t</td>
+<td>3.02 mm</td>
+<td>3.55 ×（1 − 15%）</td>
+</tr>
+<tr>
+<td>槽底直径 d3</td>
+<td>约 57.0 mm</td>
+<td>63 − 2 × 3.02，取整</td>
+</tr>
+<tr>
+<td>圈内径 d1</td>
+<td>56.0 mm</td>
+<td>就近规格，拉伸率 1.8%</td>
+</tr>
+<tr>
+<td>实际压缩率</td>
+<td>约 14%</td>
+<td>计入拉伸使截面减薄约 1.6% 后</td>
+</tr>
+</tbody>
+</table>
+<p>这张表有两次修正。槽底直径取整为 57.0 mm 后，槽深变成 3.0 mm，压缩率从 15% 升到 15.5%；内径 56.0 mm 套在 57.0 mm 槽底上，拉伸 1.8%，截面减薄约 1.6%，实际压缩率又回落到 14%。若拿 53 mm 的圈硬撑，拉伸率 7.5%，既超过 5% 的常用上限，截面也被拉细，压缩率掉出窗口——这就是硬套尺寸最常见的翻车方式。</p>
+<p>填充率用同一组数校核：槽宽 b 由标准沟槽表给出，装挡圈时扣掉挡圈占位。常见控制区间是 60%~85%，过低说明槽太宽、圈会在槽内窜动，过高则没给热膨胀留余量。</p>
+<h2>四、第四步：材质是否决项，不是优选项</h2>
+<p>材质怎么选，<a href="/articles/o-ring-material-selection/">O 型圈材质选型速查表</a>已经按介质、温度、成本三步展开。这里只保留一条原则：<strong>先用介质做否决，再在剩下的材质里挑最便宜的</strong>。否决做错，后面所有精度都白费。</p>
+<table>
+<thead>
+<tr>
+<th>工况</th>
+<th>直接排除</th>
+<th>可选方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>矿物油、燃油</td>
+<td>EPDM、VMQ</td>
+<td>NBR、HNBR、FKM</td>
+</tr>
+<tr>
+<td>酮类（丙酮、丁酮）</td>
+<td>NBR、FKM、PU、CR</td>
+<td>EPDM、FFKM、PTFE 包覆</td>
+</tr>
+<tr>
+<td>酯类溶剂</td>
+<td>NBR、FKM、EPDM、PU</td>
+<td>FFKM、PTFE 包覆</td>
+</tr>
+<tr>
+<td>醇醚型刹车油 DOT3/DOT4</td>
+<td>NBR、FKM</td>
+<td>EPDM、FFKM</td>
+</tr>
+<tr>
+<td>热水、蒸汽</td>
+<td>FKM、NBR、PU</td>
+<td>EPDM</td>
+</tr>
+<tr>
+<td>户外、强臭氧环境</td>
+<td>NBR</td>
+<td>EPDM、HNBR</td>
+</tr>
+<tr>
+<td>长期 −40℃ 以下</td>
+<td>NBR、FKM</td>
+<td>VMQ、FVMQ</td>
+</tr>
+</tbody>
+</table>
+<p>这张表只回答"能不能用"，不回答"划不划算"。同样耐 150℃，HNBR 与 FKM 都能胜任，价格差一档，这时才轮到温度余量与采购批量收口。拿不准的组合，可先用<a href="/tool/">材质与工况查询工具</a>按温度和介质筛一遍。</p>
+<h2>五、第五步：硬度、挡圈、表面与倒角，四个补丁决定寿命</h2>
+<p>前四步定的是"能不能封住"，这一步定的是"能封多久"。四个手段都有代价，不是默认全上。</p>
+<table>
+<thead>
+<tr>
+<th>手段</th>
+<th>什么时候用</th>
+<th>代价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>硬度提到 90 Shore A</td>
+<td>压力偏高或配合间隙偏大</td>
+<td>低温柔性下降，压缩永久变形增大</td>
+</tr>
+<tr>
+<td>加挡圈</td>
+<td>GB/T 3452.3 口径：工作压力超过 10 MPa 采用带挡圈结构</td>
+<td>必须换更宽的槽，成本与装配难度上升</td>
+</tr>
+<tr>
+<td>提高表面质量</td>
+<td>静密封 0.8 μm，气体与真空 0.4 μm，动密封 0.2~0.4 μm</td>
+<td>增加磨削或珩磨工序</td>
+</tr>
+<tr>
+<td>入口倒角 15°~20°</td>
+<td>所有圈要越过的棱边</td>
+<td>几乎零成本，却最常被省掉</td>
+</tr>
+</tbody>
+</table>
+<p>表面粗糙度不是越低越好。Parker 手册提示，动密封面低于约 0.25 μm 时油膜会被刮掉，摩擦与磨损反而上升；高于约 0.5 μm 又会像锉刀一样磨圈。动密封要的是能存住一层油的粗糙度，不是镜面。</p>
+<p>挡圈还有两个细节：装在低压侧，单片时 O 型圈夹在挡圈与压力源之间；切口装反会咬伤 O 型圈。双作用两侧各装一片，槽宽按带挡圈的标准槽取值，不能硬塞进原槽。</p>
+<h2>六、第六步：写成可采购的规格，做首件验证</h2>
+<p>前五步的结果必须落到一行字上，否则采购拿到的仍然是"黑色的耐油圈"。</p>
+<pre><code>O 型圈 56.0×3.55 GB/T 3452.1 NBR 70 Shore A
+</code></pre>
+<p>这一行至少写全五项：标准号、内径×截面、材质代号、硬度、特殊要求。三个写法要改掉：写"氟胶"不写 FKM，会把 FKM 与 FVMQ 混为一谈，两者价格差数倍；写"耐油橡胶"等于没写材质；只写颜色等于把材质判断交给运气——颜色只是辅助标识，不能替代代号。</p>
+<p>首件验证做三件事。查尺寸：内径与截面按 GB/T 3452.1 的公差，硬度按 GB/T 531.1 测三点取中位数。查外观：飞边、错位、杂质、切口在 10 倍放大镜下看，缺陷落在密封面就退。查装机：低压保压，再升到额定压力保压，动作循环后复查。三项都过才允许上线；跳过首件，等于把整批风险留到客户现场。</p>
+<h2>七、结论</h2>
+<p>六步法的输出物分别是：一张工况参数表、一张标了压力方向的结构简图、一组尺寸链计算、一份材质否决清单、一份补丁清单、一行可采购的规格。这六样凑齐，选型才算完成；缺哪一样，失效时就会在哪一样上找不到原因。</p>
+<p>回到开头那台减速机：如果第一步记下油温 110℃，材质栏就不会出现 NBR，三个月后的返工不会发生。手上有具体工况的，可把参数发到<a href="/contact/">询单页</a>，让供方按这张表逐项回复；只想核对尺寸的，用<a href="/tool/">站内工具</a>查内径与截面，再回来做第三步校核。</p>
+<hr />
+<p><strong>可验证事实</strong>：GB/T 3452.1-2005《液压气动用 O 形橡胶密封圈 第 1 部分：尺寸系列及公差》为现行标准，2005-07-11 发布、2006-01-01 实施，修改采用 ISO 3601-1:2002，规定 G 系列与 A 系列的内径、截面、公差与尺寸标识代号（全国标准信息公共服务平台）。GB/T 3452.3-2005 规定工作压力超过 10 MPa 时需采用带挡圈的结构型式；GB/T 3452.4-2020 为抗挤压环标准，GB/T 3452.5-2022 为弹性体材料规范。动密封压缩率 12%~18%、拉伸长期不超过 5% 的取值与站内《O 型圈压缩率怎么取》一致。表面粗糙度口径取自 Parker ORD 5700 及 Parker 官方技术博客：静密封液体约 0.8 μm、气体与真空约 0.4 μm、动密封 0.2~0.4 μm，且动密封面过光会刮除油膜。截面拉伸减薄经验公式取自 Trelleborg O 型圈技术资料。邵氏硬度试验方法为 GB/T 531.1；站内材质耐温口径与 <code>data/materials.json</code> 一致（NBR −30~100℃、EPDM −50~150℃、VMQ −60~200℃、FKM −20~200℃）。</p>
+<p><strong>个人推测部分</strong>：文中 63 mm 缸径、16 MPa、46# 抗磨液压油的算例为演示尺寸链而设，槽底直径 57.0 mm 与内径 56.0 mm 是计算示例，不是实测量值，实际设计应以对应标准的沟槽表和配合公差为准。"填充率 60%~85%"是行业常见控制区间，部分资料上限给到 90%，应以所选厂商手册为准。首件验证的保压时间与抽检数量属现场建议，不是标准强制条款。</p>
+      <div class="cta">
+        <h3>需要按你的实际工况定材质或规格？</h3>
+        <p>用工具输入温度与介质，可以直接看到推荐材质与被排除材质的原因；也可以把工况发给我们做一对一的选型确认。</p>
+        <a class="btn solid" href="/tool/" style="margin-right:10px">打开选型工具</a>
+        <a class="btn solid" href="/contact/">提交工况咨询</a>
+      </div>
+      <div class="rel"><h3>相关阅读</h3><ul><li><a href="/articles/o-ring-size-notation/">O 型圈规格怎么看：内径×截面、公差与 GB/T 3452.1 的表示法</a></li><li><a href="/articles/o-ring-material-selection/">O 型圈材质选型速查表：按温度和介质三步定材质</a></li><li><a href="/articles/o-ring-compression-groove-design/">O 型圈压缩率怎么取：静密封、往复动密封与旋转密封的沟槽设计要点</a></li><li><a href="/articles/o-ring-standards-comparison/">O 型圈标准对照：GB/T 3452.1、ISO 3601、JIS B 2401 与 AS568 能不能互换</a></li></ul></div>
+    </div>
+  </div>
+</article>
+
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>密封件.cn</h4>
+        <p>O 型密封圈规格查询与选型参考站。规格数据依据 GB/T 3452.1-2005（等同采用 ISO 3601-1），材质结论来自工程实践归纳，供设计选型与采购比对使用。</p>
+      </div>
+      <div>
+        <h4>工具与资料</h4>
+        <ul>
+          <li><a href="/tool/">O型圈规格查询工具</a></li>
+          <li><a href="/materials/">材质百科</a></li>
+          <li><a href="/articles/">技术文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>服务</h4>
+        <ul>
+          <li><a href="/contact/">选型咨询与报价</a></li>
+          <li><a href="/about/">关于本站</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      © 2026 密封件.cn　本站数据仅供参考，正式定型请以厂家实测报告及标准原文为准。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
