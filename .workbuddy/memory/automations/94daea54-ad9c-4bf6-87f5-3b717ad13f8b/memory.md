@@ -823,3 +823,24 @@
 - ⚠️ 踩坑：第一次发布后又改了正文（把未核实的「45° 剪切面」改成「边缘发亮」），只能重建重发一次。**结论：发布前必须把存疑表述改完再 build，deploy 之后不要再动 content。**
 - 字数控制：首稿 2797 字，经三轮压缩至 2496（贴近 2500 上限）。删减优先砍重复定义与解释性从句，表格与链接不动。
 - 选题池「故障与维护」已全部勾完，下一条进入「六、选型与采购」首条 `o-ring-selection-workflow`。
+
+## 2026-10-19 · 储存与保质期篇（o-ring-storage-shelf-life，order 44）
+
+| 项 | 值 |
+|---|---|
+| 选题 | `o-ring-storage-shelf-life`（选题池「故障与维护」最后一条未勾选） |
+| 标题 | O 型圈储存与保质期：库存管理的实操规范 |
+| 分类 | articles / 技术文章，order 44 |
+| 篇幅 | 正文 2148 中文字，7 节，3 个表格，内链 /tool/ /contact/ /articles/o-ring-aging-signs/ |
+| 构建 | `build.py` 成功（envs/default）→ 52 HTML / sitemap 51 条 |
+| 发布 | `deploy.py --source` 成功 → gh-pages cd275093（61 文件）、main 1e85d9b2（77 文件），Pages built |
+| 验收 | 新 URL **HTTP 200（首次轮询即通）**；线上 3 table、7 h2、4 处 `/tool/`；sitemap 51 条含该 URL；`/articles/` 200 并收录卡片 |
+| 结果 | ✅ 全链路成功 |
+
+**本次要点**
+- 去重判断：`o-ring-aging-signs` 第八节已给过 ISO 2230 三组储存期表与储存要点；本篇改从「仓库实操」切入——cure date 季度码起算、六项环境点检、按胶种分区（落到本站 10 种材质）、包装与摆放、超期复检流程、FIFO 与采购规格书条款，不重复现场判读旧圈。`compression-set-explained` 只提「库存寿命」一句，无冲突。
+- 事实核实（联网）：ISO 2230 分组 A 5+2 年（NR/BR/IR/SBR/AU/EU）、B 7+3 年（NBR/HNBR/CR/ACM/IIR）、C 10+5 年（EPDM/FKM/FFKM/VMQ/FVMQ）；5~25℃、RH<70%（PU 65%）；温度每高 10℃ 储存期约减半；复检用 10× 放大镜看裂纹、永久变形、硬化软化发粘；cure date 季度码（如 2Q24）；SAE ARP5316 对 FKM/VMQ/EPDM 给「无限期」与 ISO 2230 形成两套口径；喷霜属正常非缺陷（PIAB）。
+- ⚠️ 湿度口径有分歧（65% vs 70%）：正文写「低于 70%，聚氨酯按 65%」，与老化篇口径保持一致，未把单一厂商数字绝对化。
+- ⚠️ **新踩坑**：Cloudflare 对新 URL 首次请求可能返回 **200 但内容是另一篇文章**（边缘缓存串页），必须加 `?v=时间戳` 或复验干净 URL 并核对 `<title>`，不能只看状态码。
+- 交付：`content/o-ring-storage-shelf-life.md`、`public/` 52 HTML、`选题池.md` 已勾选。
+- 选题池推进到「六、选型与采购」首条 `o-ring-selection-workflow`。
