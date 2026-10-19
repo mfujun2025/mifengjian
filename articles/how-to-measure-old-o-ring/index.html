@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>旧 O 型圈测量：没有型号怎么反推规格 - 密封件.cn</title>
+<meta name="description" content="旧 O 型圈量出来偏小 0.17 mm，往往不是制造误差，而是压缩永久变形。本文讲清截面三点测量、大圈周长法与沟槽反推三条路径，以及 3.53 与 3.55 分不出时的判定顺序。">
+<meta name="keywords" content="旧O型圈测量,O型圈尺寸怎么量,卡尺测内径,O型圈截面测量,密封圈规格反推">
+<link rel="canonical" href="https://xn--5nq252acf.cn/articles/how-to-measure-old-o-ring/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="旧 O 型圈测量：没有型号怎么反推规格 - 密封件.cn">
+<meta property="og:description" content="旧 O 型圈量出来偏小 0.17 mm，往往不是制造误差，而是压缩永久变形。本文讲清截面三点测量、大圈周长法与沟槽反推三条路径，以及 3.53 与 3.55 分不出时的判定顺序。">
+<meta property="og:url" content="https://xn--5nq252acf.cn/articles/how-to-measure-old-o-ring/">
+<meta property="og:site_name" content="密封件.cn">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "旧 O 型圈测量：没有型号怎么反推规格",
+ "description": "旧 O 型圈量出来偏小 0.17 mm，往往不是制造误差，而是压缩永久变形。本文讲清截面三点测量、大圈周长法与沟槽反推三条路径，以及 3.53 与 3.55 分不出时的判定顺序。",
+ "datePublished": "2026-10-20",
+ "dateModified": "2026-10-20",
+ "inLanguage": "zh-CN",
+ "author": {
+  "@type": "Organization",
+  "name": "密封件.cn"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "密封件.cn"
+ },
+ "mainEntityOfPage": "https://xn--5nq252acf.cn/articles/how-to-measure-old-o-ring/"
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="/">密封件<span>.cn</span></a>
+    <nav class="topnav">
+      <a href="/">首页</a>
+      <a href="/tool/">规格查询</a>
+      <a href="/materials/">材质百科</a>
+      <a href="/articles/">技术文章</a>
+      <a href="/faq/">常见问题</a>
+      <a href="/contact/">选型咨询</a>
+    </nav>
+  </div>
+</header>
+
+
+<article class="article" style="margin:26px 0">
+  <div class="wrap" style="padding:0">
+    <div class="crumb" style="max-width:820px;margin:0 auto 14px"><a href="/">首页</a> / <a href="/articles/">技术文章</a> / 正文</div>
+    <div style="max-width:820px;margin:0 auto">
+      <h1>旧 O 型圈测量：没有型号怎么反推规格</h1>
+      <div class="meta">2026-10-20　·　技术文章</div>
+      <p>一台立式离心泵的端盖渗油，拆下来的旧圈量了三次：2.48、2.47、2.49。仓管照这个数找了家做非标的，2.5 截面配上去，装机试压不漏。三个月后同一位置又渗。再拆，旧圈已经被压成一条扁带——这个位置的设计截面是 2.65 mm，那 0.17 mm 的差额不是制造误差，是两年压缩永久变形攒出来的。</p>
+<p>量旧圈难的不是会不会用卡尺，而是先想清楚：卡尺读到的是设计尺寸，还是这块橡胶在槽里被压了两万小时之后的残骸尺寸。</p>
+<h2>一、旧圈读数不是规格，是变形后的结果</h2>
+<p>新圈出厂时的截面是一个圆，旧圈不是。三种变化会同时出现在读数里：</p>
+<table>
+<thead>
+<tr>
+<th>变化</th>
+<th>对读数的影响</th>
+<th>成因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>压缩永久变形</td>
+<td>截面变扁，厚度读数偏小、宽度变大</td>
+<td>长期受压，弹性回不来</td>
+</tr>
+<tr>
+<td>溶胀或抽出</td>
+<td>整体变大或变小，截面与内径同向变化</td>
+<td>介质与材质不兼容，增塑剂迁移</td>
+</tr>
+<tr>
+<td>拉伸残余</td>
+<td>内径偏大、截面偏细</td>
+<td>长期套在槽底，安装拉伸超过 5%</td>
+</tr>
+</tbody>
+</table>
+<p>所以第一步不是量，是让圈先缓过来。拆下后擦掉油污，等它冷到室温——刚从 80℃ 泵体上拆下来的圈，尺寸会比室温状态大百分之几。再按 GB/T 7759.1 压缩永久变形试验的恢复条件，在 23±2℃ 下放 30 分钟再量。现场没有恒温室，至少做到冷透、擦净、放半小时。</p>
+<h2>二、量哪两个数：内径与截面，外径只做校核</h2>
+<p>规格只用两个数：内径 d1 与截面 d2。外径是算出来的，<code>OD = ID + 2 × CS</code>，它不进入任何标准的规格编号。</p>
+<table>
+<thead>
+<tr>
+<th>尺寸</th>
+<th>在规格里的角色</th>
+<th>测量难点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内径 d1</td>
+<td>决定规格档位与拉伸率</td>
+<td>大圈会塌、会椭圆，卡尺跨不过去</td>
+</tr>
+<tr>
+<td>截面 d2</td>
+<td>决定压缩率与沟槽匹配</td>
+<td>橡胶软，卡尺一夹就扁</td>
+</tr>
+<tr>
+<td>外径</td>
+<td>只用于校核</td>
+<td>受变形影响最大，不能单独作依据</td>
+</tr>
+</tbody>
+</table>
+<p>三个数都量一遍，做一次自洽检查：<code>ID + 2CS</code> 与实测外径的差超过 0.15~0.2 mm，说明至少有一项量错了。要注意，这个检查只能证明"量得没错"，不能证明"圈没变形"——圈被压扁时，厚度与截面同步变小，等式照样成立。</p>
+<h2>三、截面：三个位置，轻触，避开合模线</h2>
+<p>橡胶的压缩量比很多人想的大。同一只 3.55 的圈，轻轻接触读 3.54，卡尺夹紧能读到 3.38。四种常见手法各有固定的偏差方向：</p>
+<table>
+<thead>
+<tr>
+<th>做法</th>
+<th>读数偏差</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>夹紧后再读</td>
+<td>偏小 0.05~0.15</td>
+<td>橡胶被压扁</td>
+</tr>
+<tr>
+<td>只量一个位置</td>
+<td>偏大或偏小 0.1 以上</td>
+<td>单点厚度不代表全周</td>
+</tr>
+<tr>
+<td>压在合模线上量</td>
+<td>偏大 0.05~0.10</td>
+<td>飞边被算进截面</td>
+</tr>
+<tr>
+<td>斜着卡在圆弧上</td>
+<td>偏大</td>
+<td>量的是弦长，不是直径</td>
+</tr>
+</tbody>
+</table>
+<p>正确手法是刀口轻触，读到数字刚停住就松，在圆周上相隔 120° 取三点算平均。若三点差超过 0.1 mm，说明圈已椭圆或局部压扁，平均值只能当参考。</p>
+<p>压得很扁的圈，最准的办法是剪一段。用锋利刀片垂直于轴线切断，把切口立在白纸上，用投影仪或带刻度的放大镜量真实轮廓。这是破坏性测量，但旧圈本来就要换，一段橡胶换一个准数，划算。</p>
+<p>顺带说一句硬度：邵氏 A 法的常规试样厚 6 mm，单根 3.55 的圈直接打表，读数会偏高，只能用来比较新旧件的相对变化，不能当材质判据。</p>
+<h2>四、内径：小圈用卡尺，大圈绕周长</h2>
+<p>直径 100 mm 以下，卡尺内量爪够用。量爪先收得比目测内径小，伸进圈内再轻张，感觉到接触就停，不能撑成椭圆；转 60° 再量，三次取平均。</p>
+<p>100 mm 以上，卡尺的刚性臂跨不过去，圈的自重就会让它塌成椭圆。改用钢卷尺沿截面中心线绕一圈，读周长 C：</p>
+<pre><code>中径 dm = C / π
+内径 d1 = dm − d2
+</code></pre>
+<p>这条式子有两个前提。卷尺必须沿截面中心线走，不能贴着内圈——内圈是凹面，卷尺贴不实，量出来必然偏小。<code>d2</code> 要用判定后的截面档位，不能用压扁后的实测值，否则内径会被系统性放大。</p>
+<p>误差也能算：周长差 1 mm，直径差 1/π，约 0.32 mm。普通卷尺绕 300 mm 的圈，读数控制在 2 mm 内不难，折成直径约 0.6 mm，比卡尺硬跨的 1~2 mm 好得多。</p>
+<h2>五、更可靠的一条路：量沟槽，不量圈</h2>
+<p>橡胶会变形，金属不会。旧圈只能给出"大概"，沟槽能给出"确定"。</p>
+<p>径向密封量两个直径：活塞密封量缸内径 d4 与槽底径 d3，活塞杆密封量杆径 d5 与槽底径 d6，槽深都是半径差：</p>
+<pre><code>活塞密封：t =（d4 − d3）/ 2
+活塞杆密封：t =（d6 − d5）/ 2
+</code></pre>
+<p>端面密封直接量槽深 h 与槽宽 b。拿到 t 或 h，回查 GB/T 3452.3 的沟槽表，截面档位基本就锁死了：</p>
+<table>
+<thead>
+<tr>
+<th>截面 d2</th>
+<th>径向 t（液压动）</th>
+<th>径向 t（气动动）</th>
+<th>径向 t（静）</th>
+<th>轴向 h</th>
+<th>径向槽宽 b</th>
+<th>轴向槽宽 b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.80</td>
+<td>1.35</td>
+<td>1.40</td>
+<td>1.32</td>
+<td>1.28</td>
+<td>2.4</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>2.65</td>
+<td>2.10</td>
+<td>2.15</td>
+<td>2.00</td>
+<td>1.97</td>
+<td>3.6</td>
+<td>3.8</td>
+</tr>
+<tr>
+<td>3.55</td>
+<td>2.85</td>
+<td>2.95</td>
+<td>2.90</td>
+<td>2.75</td>
+<td>4.8</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>5.30</td>
+<td>4.35</td>
+<td>4.50</td>
+<td>4.31</td>
+<td>4.24</td>
+<td>7.1</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>7.00</td>
+<td>5.85</td>
+<td>6.10</td>
+<td>5.85</td>
+<td>5.72</td>
+<td>9.5</td>
+<td>9.7</td>
+</tr>
+</tbody>
+</table>
+<p>内径也能反推。径向密封的圈套在槽底上，设计拉伸通常取 1%~3%：</p>
+<pre><code>d1 ≈ d3 /（1 + ε），ε 取 1%~3%
+</code></pre>
+<p>算出来的数再落到标准档上。槽底径 57.0 mm、取 ε = 2%，d1 ≈ 55.9 mm，就近落 56.0 mm——这就是选型时那条反算链，只是方向反过来走。反推时不能用带挡圈的槽宽 b1、b2 查截面，那两档是给挡圈留的位置，查出来会偏大一档。</p>
+<h2>六、3.53 和 3.55 分不出来，是正常的</h2>
+<p>把两套体系的公差摆在一起，问题就清楚了：</p>
+<table>
+<thead>
+<tr>
+<th>档位</th>
+<th>公制 G 系列</th>
+<th>公差带</th>
+<th>AS568</th>
+<th>公差带</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小截面</td>
+<td>1.80</td>
+<td>1.72~1.88</td>
+<td>1.78</td>
+<td>1.70~1.86</td>
+</tr>
+<tr>
+<td>中截面</td>
+<td>2.65</td>
+<td>2.56~2.74</td>
+<td>2.62</td>
+<td>2.54~2.70</td>
+</tr>
+<tr>
+<td>大截面</td>
+<td>3.55</td>
+<td>3.45~3.65</td>
+<td>3.53</td>
+<td>3.43~3.63</td>
+</tr>
+<tr>
+<td>特大截面</td>
+<td>5.30</td>
+<td>5.17~5.43</td>
+<td>5.33</td>
+<td>5.20~5.46</td>
+</tr>
+</tbody>
+</table>
+<p>两套公差带宽度几乎一样，中心只差 0.02 mm。卡尺分辨力是 0.01 mm，但橡胶的压缩误差在 0.05 mm 级，所以<strong>用卡尺判系列，从原理上就不成立</strong>。</p>
+<p>判断顺序只能改成三条：先看设备来源，美系走 AS568、欧系与国产走 GB/ISO 的 G 系列、日系走 JIS B 2401；再看内径落在哪套数列上，G 系列走优先数系，AS568 每档加 1/16 英寸，两套数列只在少数点上重合；最后翻历史采购记录。同一台设备不要混用两套，混一次就会改掉填充率。</p>
+<p>材质也能从旧圈上看出一条线索。在矿物油里明显溶胀、发软的圈，大概率不是 NBR，而是 EPDM 或硅橡胶——这两种都不耐矿物油；在酮类、酯类里溶胀的，才更像 NBR。遇到这种情况先改材质，再谈尺寸，否则照原样再买一只，结果还是一样。</p>
+<h2>七、一张记录单，三条结论</h2>
+<p>现场量完就该把结果固定下来，别等到下单时凭记忆复述。下表是我建议保留的最小字段集：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>记录内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>设备与部位</td>
+<td>泵型号、密封位名称、拆机日期</td>
+</tr>
+<tr>
+<td>密封型式</td>
+<td>径向静密封 / 往复动密封 / 端面密封</td>
+</tr>
+<tr>
+<td>沟槽尺寸</td>
+<td>d3 或 d6、槽宽 b、槽深 t 或 h</td>
+</tr>
+<tr>
+<td>旧圈读数</td>
+<td>内径三次、截面三点、外径</td>
+</tr>
+<tr>
+<td>自洽偏差</td>
+<td><code>ID + 2CS − OD</code> 的差值</td>
+</tr>
+<tr>
+<td>变形判读</td>
+<td>压扁 / 溶胀 / 收缩 / 拉伸残余</td>
+</tr>
+<tr>
+<td>材质初判</td>
+<td>颜色、硬度变化、介质与温度</td>
+</tr>
+<tr>
+<td>落档结论</td>
+<td>内径 × 截面，G 系列或 AS568</td>
+</tr>
+<tr>
+<td>依据</td>
+<td>沟槽反推 / 尺寸落档 / 设备来源</td>
+</tr>
+</tbody>
+</table>
+<p>三条结论，按这个顺序执行：</p>
+<ol>
+<li><strong>先量沟槽，再量圈。</strong> 沟槽是金属件，不会随时间变形，它给出的截面档位比旧圈读数可靠一档。</li>
+<li><strong>截面取三点平均，压扁的剪段上投影仪；大圈绕周长算内径。</strong> 不要用外径减两倍公称截面倒推，那是把两个误差叠在一起。</li>
+<li><strong>落档之后按设备来源定系列。</strong> 分不出 G 系列与 AS568 时，不要凭 0.02 mm 的读数硬猜；同一台设备保持单一体系。</li>
+</ol>
+<p>手上有尺寸但不确定落哪一档的，可以先用<a href="/tool/">规格查询工具</a>按内径与截面查一遍公差带；旧圈已经变形、沟槽又量不准的，把照片和三个读数发到<a href="/contact/">询单页</a>，按样品复测比在电话里报数靠谱。</p>
+<hr />
+<p><strong>可验证事实</strong>：GB/T 3452.1-2005 规定 G 系列（一般用途）截面档为 1.80、2.65、3.55、5.30、7.00 mm，对应公差分别为 ±0.08、±0.09、±0.10、±0.13、±0.15 mm；AS568 同档截面为 1.78、2.62、3.53、5.33、6.99 mm，公差为 ±0.08、±0.08、±0.10、±0.13、±0.15 mm（ISO 3601-1A 口径）。表五的沟槽槽深与槽宽数值取自 GB/T 3452.3-2005 径向与轴向沟槽表，本站《O 型圈沟槽标准 GB/T 3452.3》一文已逐档引用。<code>OD = ID + 2CS</code> 的关系与"旧圈截面常比原规格小、外径内径可能失圆"的判断，见 Global O-Ring and Seal 的尺寸指南与加耐力 CNL 的量测步骤说明；大直径圈用锥形量规或周长法、小直径圈用卡尺三点测量的做法，两家口径一致。压缩永久变形试验的恢复条件（23±2℃、30 min）与站内《O 型圈压缩永久变形》一篇一致。</p>
+<p><strong>个人推测部分</strong>：表三中各类手法的偏差量（夹紧偏小 0.05~0.15 mm、飞边偏大 0.05~0.10 mm）是按 70 Shore A 丁腈圈的现场经验估的，不是标准规定值，换高硬度或低硬度胶料会变。用卷尺绕周长时"误差控制在 2 mm 内、折合直径 0.6 mm"属操作经验，取决于圈的刚度与卷尺贴合程度。文中离心泵旧圈 2.48 与设计 2.65 的例子为说明变形量级而设，不是特定设备的实测记录。三条结论的排序是工程判断，不是标准条款。</p>
+      <div class="cta">
+        <h3>需要按你的实际工况定材质或规格？</h3>
+        <p>用工具输入温度与介质，可以直接看到推荐材质与被排除材质的原因；也可以把工况发给我们做一对一的选型确认。</p>
+        <a class="btn solid" href="/tool/" style="margin-right:10px">打开选型工具</a>
+        <a class="btn solid" href="/contact/">提交工况咨询</a>
+      </div>
+      <div class="rel"><h3>相关阅读</h3><ul><li><a href="/articles/o-ring-size-notation/">O 型圈规格怎么看：内径×截面、公差与 GB/T 3452.1 的表示法</a></li><li><a href="/articles/o-ring-material-selection/">O 型圈材质选型速查表：按温度和介质三步定材质</a></li><li><a href="/articles/o-ring-compression-groove-design/">O 型圈压缩率怎么取：静密封、往复动密封与旋转密封的沟槽设计要点</a></li><li><a href="/articles/o-ring-standards-comparison/">O 型圈标准对照：GB/T 3452.1、ISO 3601、JIS B 2401 与 AS568 能不能互换</a></li></ul></div>
+    </div>
+  </div>
+</article>
+
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>密封件.cn</h4>
+        <p>O 型密封圈规格查询与选型参考站。规格数据依据 GB/T 3452.1-2005（等同采用 ISO 3601-1），材质结论来自工程实践归纳，供设计选型与采购比对使用。</p>
+      </div>
+      <div>
+        <h4>工具与资料</h4>
+        <ul>
+          <li><a href="/tool/">O型圈规格查询工具</a></li>
+          <li><a href="/materials/">材质百科</a></li>
+          <li><a href="/articles/">技术文章</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>服务</h4>
+        <ul>
+          <li><a href="/contact/">选型咨询与报价</a></li>
+          <li><a href="/about/">关于本站</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      © 2026 密封件.cn　本站数据仅供参考，正式定型请以厂家实测报告及标准原文为准。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
