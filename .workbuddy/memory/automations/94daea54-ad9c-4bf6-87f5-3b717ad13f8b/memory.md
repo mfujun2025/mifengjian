@@ -844,3 +844,25 @@
 - ⚠️ **新踩坑**：Cloudflare 对新 URL 首次请求可能返回 **200 但内容是另一篇文章**（边缘缓存串页），必须加 `?v=时间戳` 或复验干净 URL 并核对 `<title>`，不能只看状态码。
 - 交付：`content/o-ring-storage-shelf-life.md`、`public/` 52 HTML、`选题池.md` 已勾选。
 - 选题池推进到「六、选型与采购」首条 `o-ring-selection-workflow`。
+
+## 2026-10-19 · 选型流程篇（o-ring-selection-workflow，order 45）
+
+| 项 | 值 |
+|---|---|
+| 选题 | `o-ring-selection-workflow`（选题池「选型与采购」首条未勾选） |
+| 标题 | O 型圈选型六步法：从工况参数走到可下单型号 |
+| 分类 | articles / 技术文章，order 45 |
+| 篇幅 | 正文 2498 中文字，6 步 + 结论共 7 节，5 个表格，内链 /tool/×2、/contact/、材质选型篇 |
+| 构建 | `build.py` 成功 → 62 文件 / 53 HTML / sitemap 52 条 |
+| 发布 | `deploy.py --source` 成功（1m58s）→ gh-pages 51e434a8、main 43c5c96f，Pages built |
+| 验收 | 新 URL **HTTP 200**（带 `?v=` 首测即通）；标题正确、5 table；干净 URL 200；sitemap 含该 URL；/articles/ 与首页卡片均收录 |
+| 结果 | ✅ 全链路成功 |
+
+**本次要点**
+- 去重判断：站内已有 `o-ring-material-selection`（介质→温度→成本三步选材质）、`o-ring-compression-groove-design`（压缩率/拉伸率/沟槽）、`hydraulic-system-o-ring`（压力-温度-介质三角）、`o-ring-failure-modes`（反向排故）。本篇取「正向全流程」角度：六步各自有输出物（工况表、结构简图、尺寸链、材质否决清单、补丁清单、规格行），材质只作为第四步的否决项并内链到既有长文，避免重复。
+- 事实核实：GB/T 3452.1-2005 为现行（2021-11-23 复审继续有效），修改采用 ISO 3601-1:2002；GB/T 3452.3-2005 的 10 MPa 挡圈门槛沿用前篇已核实口径；GB/T 3452.4-2020 挡环、GB/T 3452.5-2022 材料规范；Parker ORD 5700 表面粗糙度静密封 0.8 μm（液体）/0.4 μm（气体真空）、动密封 0.2~0.4 μm，且过光会刮掉油膜（Parker 官方博客）。
+- 新算例（可复用）：63 mm 缸径、16 MPa、3.55 截面、目标压缩 15% → 槽深 3.02 → 槽底 57.0 → 内径 56.0（拉伸 1.8%）→ 截面减薄 1.6% → 实际压缩率约 14%；若用 53 mm 圈则拉伸 7.5%，超 5% 上限。
+- ⚠️ 材质表内部一致性：初稿把「酮类、酯类」并列排除 EPDM，与 `data/materials.json`（EPDM 耐酮、不耐酯）冲突，已拆成两行修正。写含介质的表时必须逐行对 json 复核。
+- 字数：首稿 2769，四轮压缩到 2498；**经验：本站一篇 7 节 5 表的文章，首稿通常超 2500 约 250~300 字，需预留删减**。
+- 交付：`content/o-ring-selection-workflow.md`、`选题池.md` 已勾选、public 62 文件。
+- 选题池推进到「六、选型与采购」第 2 条 `how-to-measure-old-o-ring`。
