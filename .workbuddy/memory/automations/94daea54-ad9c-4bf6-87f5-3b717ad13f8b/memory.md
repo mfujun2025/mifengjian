@@ -1027,3 +1027,18 @@
 - 未复现 Cloudflare 串页：首测 200 且标题正确。
 - 交付：`content/import-o-ring-substitution.md`、`选题池.md`（末条跳过 + 新增第八节记录）、public 59 HTML。
 - **下次选题**：从「拓展方向」取，优先 2 维修实例（注塑机／空压机／机床换密封实录）或 4 采购实务（报价单结构、批次差异），二者站内均无专篇；写前仍须与 `excavator-seal-guide`、`o-ring-purchase-spec` 逐条比对。
+
+## 2026-10-26 · 空压机密封件维修实录篇（air-compressor-seal-guide，order 52）
+
+| 项 | 值 |
+|---|---|
+| 选题 | 池已全勾完 → 从「拓展方向 2·维修实例」新挖 `air-compressor-seal-guide`，追加到「八、拓展选题」并勾选 |
+| 标题 | 空压机密封件更换实录：从漏油倒推材质与型号 |
+| 分类 | articles / 技术文章，order 52 |
+| 篇幅 | 正文约 2200 汉字，7 节，1 张材质选型表，`/tool/` 5 处、`/contact/` 4 处 |
+| 构建 | `build.py` 成功 → sitemap 59 条（58+1），文章页表格数 1、链接齐全、标题/H1 正确 |
+| 发布 | `deploy.py --source` 成功 → gh-pages fad4cb50、main 8b5b0d13，Pages built |
+| 验收 | 文章 URL 首测 **200**；sitemap、`/articles/` 列表均含该 URL（各 1 处） |
+| 结果 | ✅ 全链路成功，无失败项 |
+
+**要点**：维修实例类首篇，立论「漏油不是换圈，是材质/型号从一开始就错」。硬数据均经联网核实并与 `materials.json` 对齐：螺杆机排气 75–95℃、>105℃ 报警、轴封位选 FKM/HNBR；红线 EPDM/VMQ 不耐矿物油（与站内数据一致）。未复现 Cloudflare 串页，首测即 200。
