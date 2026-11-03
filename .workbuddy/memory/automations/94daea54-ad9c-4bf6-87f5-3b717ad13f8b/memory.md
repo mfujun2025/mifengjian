@@ -1165,3 +1165,22 @@
 - 选题去重：池已全勾完；核对既有 `material-comparison-table`/`o-ring-material-selection`（横向对比）与 `import-o-ring-substitution`（国产替代进口的公差/批次验证），确认「材质间替代决策树」未覆盖，属拓展方向 5 空白。
 - 红线把关：严格按「介质 > 温度 > 成本」优先级；显式列四条禁区（矿物油/燃油不能用 EPDM/VMQ、蒸汽不能用 FKM/NBR、刹车油只能用 EPDM、动态密封不能用纯 PTFE）。耐温/介质口径对齐 `data/materials.json`。
 - 替代路径仅给「向上包含」升级（NBR→HNBR→FKM→FFKM、VMQ→FVMQ），跨族替换标为坑，避免误导换错材质。
+
+## 2026-11-03 · 第 60 篇（池全勾完 → 拓展方向 6 新挖）
+
+| 项 | 值 |
+|---|---|
+| 选题 | `drinking-water-o-ring-cert`（选题池已全勾完，从文末「拓展方向 6·行业合规」挖「饮用水接触认证」新题，追加到选题池「九」末尾并标记已发布） |
+| 标题 | 饮用水级密封圈：WRAS/KTW/NSF61 认证怎么选 |
+| 分类 | articles / 技术文章，order 60 |
+| 篇幅 | 正文约 2100 中文字，7 节，2 个表格，`/tool/` 与 `/contact/` 各 5 处 |
+| 构建 | `build.py` 成功 → 68 个 HTML（+1）、sitemap 67 条（+1） |
+| 发布 | `deploy.py --source` 成功 → gh-pages built、main `124afaee`（105 文件） |
+| 验收 | 新文章 URL **首次轮询即 200**；线上 sitemap 含该 URL，`/articles/` 列表页与首页卡片均已收录 |
+| 结果 | ✅ 全链路成功 |
+
+**要点**
+
+- 与既有 `export-compliance-seal-guide`（RoHS/REACH/食品接触 GB 4806）刻意区隔：本篇专讲**饮用水接触认证**（WRAS/KTW-BWGL/NSF61/ACS/国内涉水批件），不重叠。
+- 关键事实已联网核实并标 MLA 引用：WRAS 按 BS 6920:2000/2014 五试验、温度带冷≤23℃/热≤85℃、5 年复审；KTW-BWGL 弹性体 **2026-07-01 起强制**；**GB/T 17219-1998 已于 2026-03-01 废止、由 GB/T 17219-2025 替代**（当前日期 2026-11-03，必须按 2025 版核对）。
+- 材质口径对齐 `data/materials.json`：EPDM 耐水/蒸汽/臭氧为主流饮用水密封；VMQ 饮用水为冷/热水非连续蒸汽（与 steam_hot_water 标 bad 的「连续饱和蒸汽」工况拆开）；FKM 不耐热水蒸汽非首选；PTFE 无弹性需配弹簧/挡圈。
