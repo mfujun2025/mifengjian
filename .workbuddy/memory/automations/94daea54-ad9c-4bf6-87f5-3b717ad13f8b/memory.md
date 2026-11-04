@@ -1184,3 +1184,19 @@
 - 与既有 `export-compliance-seal-guide`（RoHS/REACH/食品接触 GB 4806）刻意区隔：本篇专讲**饮用水接触认证**（WRAS/KTW-BWGL/NSF61/ACS/国内涉水批件），不重叠。
 - 关键事实已联网核实并标 MLA 引用：WRAS 按 BS 6920:2000/2014 五试验、温度带冷≤23℃/热≤85℃、5 年复审；KTW-BWGL 弹性体 **2026-07-01 起强制**；**GB/T 17219-1998 已于 2026-03-01 废止、由 GB/T 17219-2025 替代**（当前日期 2026-11-03，必须按 2025 版核对）。
 - 材质口径对齐 `data/materials.json`：EPDM 耐水/蒸汽/臭氧为主流饮用水密封；VMQ 饮用水为冷/热水非连续蒸汽（与 steam_hot_water 标 bad 的「连续饱和蒸汽」工况拆开）；FKM 不耐热水蒸汽非首选；PTFE 无弹性需配弹簧/挡圈。
+
+---
+
+## 2026-11-04 运行：forklift-seal-guide（叉车密封件维修实录）
+
+| 步骤 | 结果 |
+| --- | --- |
+| 选题 | 选题池已全部勾完（无 `- [ ]`），从拓展方向②维修实例挖新题「叉车」（点名设备、未做）；slug `forklift-seal-guide`，order 61，date 2026-11-04 |
+| 写作 | 1800~2500 字，含 2 个对照表（故障现象表、材质红线表）；钩子开头；引导 `/tool/` 与 `/contact/` |
+| 数据一致性 | 材质口径对齐 `data/materials.json`：NBR -30~100℃、HNBR -40~150℃、FKM -20~200℃、PU -30~80℃、EPDM/VMQ 不耐矿物油；磷酸酯难燃液工况 NBR/FKM/HNBR 均不兼容→须用 EPDM（红线已写入） |
+| 构建 | build.py 成功；HTML 69 页（较上次 +1），sitemap 68 条（含新 URL），`/articles/` 列表收录；新页表格 13 行、`/tool/` `/contact/` 链接齐全 |
+| 发布 | `deploy.py --source` 成功；gh-pages 78 文件、main 106 文件（含新文章+选题池）已推；Pages 状态 built |
+| 验收 | 新文章 URL 首次轮询即 200；线上 sitemap 含该 URL，`/articles/` 列表页已收录 |
+| 结果 | 全链路成功 |
+
+要点：与既有维修实例（excavator / air-compressor / injection-molding）区隔，专属叉车，按液压回路拆解四处密封点并给换件清单；选题池新增条目已改为 `- [x] ｜已发布 2026-11-04`。
