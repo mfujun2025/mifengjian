@@ -1200,3 +1200,20 @@
 | 结果 | 全链路成功 |
 
 要点：与既有维修实例（excavator / air-compressor / injection-molding）区隔，专属叉车，按液压回路拆解四处密封点并给换件清单；选题池新增条目已改为 `- [x] ｜已发布 2026-11-04`。
+
+---
+
+## 2026-11-05 运行：machine-tool-seal-repair（机床密封维修实录）
+
+| 步骤 | 结果 |
+| --- | --- |
+| 选题 | 选题池已全部勾完（无 `- [ ]`），从拓展方向②维修实例挖新题「机床」（点名设备、未做）；slug `machine-tool-seal-repair`，order 62，date 2026-11-05 |
+| 写作 | 正文约 2100 中文字，7 节，2 个表格（故障现象对照表、材质红线双工况表）；钩子开头；引导 `/tool/` 5 处、`/contact/` 5 处 |
+| 数据一致性 | 材质口径对齐 `data/materials.json`：NBR -30~100℃、HNBR -40~150℃、FKM -20~200℃、PU -30~80℃ 怕水解、EPDM -50~150℃ 不耐矿物油但耐水、VMQ 不耐油；冷却水基/矿物油双工况红线写入 |
+| 技术核实 | 油封线速度上限 NBR/FKM ≈10~15 m/s（与站内 rotary-o-ring-speed-limit 口径一致）；液压卡盘常规油压 1.5~4 MPa、保压 3 min 压降 >0.2 MPa 判内泄（行业文章+厂家资料） |
+| 构建 | build.py 成功；HTML 79 页（较上次 +1，62 篇文章）、sitemap 含新 URL；新页表格 2 个、`/tool/` `/contact/` 链接齐全 |
+| 发布 | `deploy.py --source` 成功；gh-pages `86d8f23a`（79 文件）、main `1eb5d9e6`（107 文件，含新文章+选题池）已推；Pages 状态 built |
+| 验收 | 新文章 URL **首次轮询即 200**；线上 sitemap 含该 URL，`/articles/` 列表页已收录 |
+| 结果 | 全链路成功 |
+
+要点：与既有维修实例（excavator/forklift/air-compressor/injection-molding）区隔，专属数控机床，按「旋转密封（主轴油封+轴磨损+线速度）+ 液压密封（卡盘/回转油缸/旋转接头）+ 冷却液环境（EPDM/PU 取舍）」三块拆解；选题池新增条目已改为 `- [x] ｜已发布 2026-11-05`。
