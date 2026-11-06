@@ -1217,3 +1217,13 @@
 | 结果 | 全链路成功 |
 
 要点：与既有维修实例（excavator/forklift/air-compressor/injection-molding）区隔，专属数控机床，按「旋转密封（主轴油封+轴磨损+线速度）+ 液压密封（卡盘/回转油缸/旋转接头）+ 冷却液环境（EPDM/PU 取舍）」三块拆解；选题池新增条目已改为 `- [x] ｜已发布 2026-11-05`。
+
+---
+## 2026-11-06 执行摘要
+- 选题池已全部勾完 → 从拓展方向①挖新题：往复动密封选型（O型圈/Y/U形圈/格莱圈·斯特封边界与换型判据）。
+- 产出：`content/reciprocating-seal-types.md`（articles，order 63，63 篇文，2 张表，含 /tool/ 与 /contact/ 链接）。
+- 选题池：在「九、从拓展方向新挖的选题」追加该条并标记 `- [x] ｜已发布 2026-11-06`。
+- 构建：用指定 Python 解释器 build.py 成功，public/ 80 文件，新页 articles/reciprocating-seal-types/index.html 生成。
+- 发布：`deploy.py --source` 成功，gh-pages(80文件)+main(108文件) 均 built。
+- 验收：文章页首次轮询即 200；sitemap.xml 含该 URL；articles 列表页已收录。
+- 数据一致性：格莱圈/斯特封芯材 NBR(-30~100℃)/FKM(-20~200℃) 与 materials.json 一致；PU 不耐水（含水液压液禁用 PU Y圈）已点明。
