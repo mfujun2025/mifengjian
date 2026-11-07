@@ -1226,4 +1226,14 @@
 - 构建：用指定 Python 解释器 build.py 成功，public/ 80 文件，新页 articles/reciprocating-seal-types/index.html 生成。
 - 发布：`deploy.py --source` 成功，gh-pages(80文件)+main(108文件) 均 built。
 - 验收：文章页首次轮询即 200；sitemap.xml 含该 URL；articles 列表页已收录。
+
+---
+
+## 2026-11-07 执行摘要
+- 选题池已全部勾完 → 从拓展方向④采购实务挖新题：密封件报价单怎么看（价格构成、隐性条款、归一化比价）。与既有 o-ring-purchase-spec（写规格书）、seal-supplier-audit-guide（审厂）、non-standard-o-ring-custom（定制交期）无重叠。
+- 产出：`content/seal-quotation-guide.md`（articles，order 64，64 篇文，3 张表，含 /tool/ 与 /contact/ 链接；材质价格档对齐 data/materials.json 的定性价格档）。
+- 选题池：在「九、从拓展方向新挖的选题」追加该条并标记 `- [x] ｜已发布 2026-11-07`。
+- 构建：用指定 Python 解释器 build.py 成功，public/ 81 文件，新页 articles/seal-quotation-guide/index.html 生成；抽查表格 3 个、/tool/ 与 /contact/ 链接齐全、sitemap 含新 URL。
+- 发布：`deploy.py --source` 成功，gh-pages(81文件)+main(109文件) 均 built。
+- 验收：文章页首次轮询即 200；sitemap.xml 含该 URL；articles 列表页已收录。
 - 数据一致性：格莱圈/斯特封芯材 NBR(-30~100℃)/FKM(-20~200℃) 与 materials.json 一致；PU 不耐水（含水液压液禁用 PU Y圈）已点明。
