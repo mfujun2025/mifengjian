@@ -1237,3 +1237,12 @@
 - 发布：`deploy.py --source` 成功，gh-pages(81文件)+main(109文件) 均 built。
 - 验收：文章页首次轮询即 200；sitemap.xml 含该 URL；articles 列表页已收录。
 - 数据一致性：格莱圈/斯特封芯材 NBR(-30~100℃)/FKM(-20~200℃) 与 materials.json 一致；PU 不耐水（含水液压液禁用 PU Y圈）已点明。
+
+## 2026-11-08 执行摘要（自动化第 N 次）
+- 选题池已全勾完（- [ ] 仅剩格式说明行）。从「拓展方向 1/3·密封件类型与结构」挖新题：弹簧蓄能密封（泛塞封）。
+- 新条目已追加到 选题池.md 第九节末尾：spring-energized-seal-guide（articles / 技术文章），写完后已勾选 ｜已发布 2026-11-08。
+- 文章：content/spring-energized-seal-guide.md，order=65，正文约 2300 字，含 2 张对照表（弹簧选型、外套耐温）、4 处 /tool/ 与 4 处 /contact/ 链接。
+- 数据口径：与 data/materials.json 一致——明确区分「PTFE 包覆圈（-60~260，受橡胶内芯）」与「弹簧蓄能密封实心 PTFE 外套（-200~260）」为两种产品，避免矛盾；压力/速度区间引用 Ceetak 手册（悬臂 350bar/15m/s、螺旋 800bar）。
+- 构建：build.py 成功，新增 public/articles/spring-energized-seal-guide/index.html；抽查表格 2、/tool/ 4、/contact/ 4、sitemap 命中、articles 列表收录均 OK。
+- 发布：deploy.py --source 成功，gh-pages 82 文件 + main 110 文件，Pages 状态 built。
+- 验收：文章页 HTTP 200（首次即过）、sitemap 含 URL、/articles/ 列表收录，全部通过。
