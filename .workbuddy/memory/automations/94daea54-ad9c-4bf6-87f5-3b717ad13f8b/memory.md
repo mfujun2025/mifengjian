@@ -1245,4 +1245,12 @@
 - 数据口径：与 data/materials.json 一致——明确区分「PTFE 包覆圈（-60~260，受橡胶内芯）」与「弹簧蓄能密封实心 PTFE 外套（-200~260）」为两种产品，避免矛盾；压力/速度区间引用 Ceetak 手册（悬臂 350bar/15m/s、螺旋 800bar）。
 - 构建：build.py 成功，新增 public/articles/spring-energized-seal-guide/index.html；抽查表格 2、/tool/ 4、/contact/ 4、sitemap 命中、articles 列表收录均 OK。
 - 发布：deploy.py --source 成功，gh-pages 82 文件 + main 110 文件，Pages 状态 built。
-- 验收：文章页 HTTP 200（首次即过）、sitemap 含 URL、/articles/ 列表收录，全部通过。
+- 验收：文章页 HTTP 200（首次即过）、sitemap 含 URL、/articles/ 列表收录，全部通过。
+## 2026-11-09 执行摘要
+- 任务：给密封件.cn 新增一篇技术文章并构建发布。
+- 选题：选题池全部已勾完/跳过，按规则从拓展方向 3（参数深挖·超高压 40MPa+）新挖选题 `ultra-high-pressure-seal-guide`，追加至选题池第十节并标记「已发布 2026-11-09」。
+- 文章：超高压 O 型圈：40MPa 以上密封怎么设计（category=articles, order=66, date=2026-11-09）。正文约 2000 字，含 3 张对照/选型表，结尾含 /tool/ 与 /contact/ 链接，并附「可验证事实 / 个人推测部分」分段。
+- 数据一致性：材质耐温口径（NBR -30~100、HNBR -40~150、FKM -20~200、PU -30~80、PTFE -60~260℃）与 data/materials.json 完全一致；40MPa 软上限引用 Eriks 手册与大连通宝液压公开数据。
+- 构建：build.py 成功，public 现 74 个 HTML（sitemap 73 条），较上次 +1。
+- 发布：deploy.py --source 成功，gh-pages 与 main 均推送（main d351fe7a / gh-pages e8954925）。
+- 线上验收：文章页 200、sitemap 含该 URL、/articles/ 列表页 200。
