@@ -55,3 +55,14 @@
 - **发布**：deploy.py --source 成功；gh-pages 88 文件（55f1e0b7）、main 120 文件（d54ddd01）。
 - **验收**：线上文章页首次请求即 200；sitemap 含新 URL、/articles/ 列表页 200 且收录。一次通过。
 - **选题池**：已追加条目并标记「已发布 2026-11-15」。
+
+## 2026-11-16 执行记录
+
+- **选题**：选题池全部勾完，新挖 → `steam-hot-water-seal-guide`（蒸汽/热水介质工况，全站无专文；epdm-o-ring-guide 仅讲材质本身、high-temperature-seal-guide 仅讲温度维度、water-treatment-o-ring 讲耐氯，不重叠）。已追加到选题池第十章并标记「已发布 2026-11-16」。
+- **文章**：`content/steam-hot-water-seal-guide.md`，order=72，category=articles。正文 1920 汉字，6 个 H2，2 个 Markdown 表格（表压-饱和温度对照、橡胶蒸汽排名对照），结尾引导 /tool/ 与 /contact/。
+- **关键事实来源**：联网核实——表压/饱和温度对照（0.2→133.5℃ … 1.6→203.4℃，IAPWS-IF97，多源一致）、0.5MPa 绝压 151.9℃ vs 表压 158.8℃、蒸汽四类失效机理（水解/配合剂抽出/压缩永久变形激增/爆炸性减压 RGD）、硫磺硫化 EPDM 蒸汽 ~120℃ vs 过氧化物硫化 130~150℃、标准 FKM 蒸汽中 ≤120℃、FKM 特种牌号（ETP/GF）与 FFKM 逐牌号确认（Kalrez 6375 推荐 vs 4079 不推荐）、FEPM/AFLAS 为油+蒸汽折中、柔性石墨 450℃/金属缠绕垫 -196~650℃（与高温篇口径一致）。
+- **数据一致性**：橡胶蒸汽排名严格对齐 `data/materials.json`（EPDM good 蒸汽、FKM/NBR/VMQ/PU/HNBR/FVMQ/CR bad 蒸汽、FFKM/PTFE 包覆 good）；HNBR 有一来源称水/蒸汽 150℃，按站内口径写为「不耐长期高温水/蒸汽水解」不采用。
+- **构建**：build.py 成功，89 个文件（+1）、72 篇文章；抽查表格=2、/tool/ 链接=3、/contact/ 链接=3、sitemap 与 /articles/ 列表页均收录。
+- **发布**：deploy.py --source 成功；gh-pages 89 文件（8c95b49d）、main 122 文件（3d7e7373）。
+- **验收**：线上文章页首次请求即 200；sitemap 含新 URL、/articles/ 列表页 200 且收录。一次通过。
+- **待办备注**：拓展方向候选余量——液压缸维修实例、饮用水外行业合规补充、标准互换换算类（需先防与 metric-vs-inch/jis/as568 重叠）。
